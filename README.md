@@ -19,6 +19,7 @@ Some annotations require external files as shown below. For the full list of ann
   - [Explicit lyrics classifier trained on 438k lyrics](LINK_HERE)
   - [LDA topic model trained on 1.05M lyrics](LINK_HERE)
   
-
+## Working with the data
+make examples.py file to show how to open the tables, models, etc
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
