@@ -1,8 +1,6 @@
 # WASABI Song Corpus
 We present the WASABI Song Corpus, a collection of 2.1M songs enriched with metadata extracted from music databases on the Web, and resulting from the natural language processing of song lyrics as well as from audio analysis.
 
-Some annotations require external files as shown below. For the full list of annotations provided, refer to our paper as well as section (LINK_TO_SECTION).
-
 ## Overview
 - The WASABI Song Corpus consists of CSV files containing the songs, the artists and the albums.
   - [2.1M songs](https://mega.nz/#!GUhzBagS!dkWiRhRKCzTpbWtWcUvoD3Rrhleq50krvvg6n0SaI-w)
