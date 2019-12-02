@@ -9,7 +9,7 @@ Some annotations require external files as shown below. For the full list of ann
   - [77k artists](https://mega.nz/#!jUojAQjb!lV6K3U49l0xzw7XzL5zXKQscSI8hntrO_FVp8luH4zE)
   - [208k albums](https://mega.nz/#!ScwnlarS!V59gnQY_oDOFzBplIok7nMnAC2QUq7UpbgmpDjLAWWQ)
 - Natural Language Processing Annotations
-  - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](LINK_HERE)
+  - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](https://mega.nz/#!HR5R3ACA!wV9zqtQSxziZCdXwu3gApnrTIPyH2hMAgGUYJEqmlmk)
   - [50k lyrics summaries](https://mega.nz/#!SdpxTS4I!SdbzMWvZO9fKkIF1OkHZ5lPH6v5w0HvK-GeztBV1T-g)
   - [Topic predictions for 1.73M lyrics](https://mega.nz/#!mYwhASJY!nwzbkKcorV1N9rJAx81SHOmZyfZqmCUtNaZLIVp_AUY)
 - Additional annotations provided
