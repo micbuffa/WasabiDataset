@@ -20,6 +20,6 @@ Some annotations require external files as shown below. For the full list of ann
   - [LDA topic model trained on 1.05M lyrics](https://mega.nz/#!KFhh2AyC!-OaAifvACt3CAo-Pl-D14LIOb6Gx4ReJzjmqY7StwCY)
   
 ## Working with the data
-Our [Jupyter Notebook](LINK_IT) shows the dependencies and examples on how to use the different resources.
+Our [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows the dependencies and examples on how to use the different resources.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
