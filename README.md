@@ -6,7 +6,7 @@ Some annotations require external files as shown below. For the full list of ann
 ## Overview
 - The WASABI Song Corpus consists of CSV files containing the songs, the artists and the albums.
   - [2.1M songs](LINK_HERE)
-  - [77k artists](LINK_HERE)
+  - [77k artists](https://mega.nz/#!jUojAQjb!lV6K3U49l0xzw7XzL5zXKQscSI8hntrO_FVp8luH4zE)
   - [208k albums](LINK_HERE)
 - Natural Language Processing Annotations
   - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](LINK_HERE)
