@@ -29,7 +29,7 @@ lyrics = lyricwikia.get_lyrics('Led Zeppelin', 'Stairway to heaven')
 ```
 
 ### Citation
-If you find our work useful and use our resources, please cite the follwing paper:
+If you use our resource, please cite the following article:
 ```
 not yet available
 ```
