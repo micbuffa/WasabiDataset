@@ -1,5 +1,8 @@
 # WASABI Song Corpus
-We present the WASABI Song Corpus, a collection of 2.1M songs enriched with metadata extracted from music databases on the Web, and resulting from the natural language processing of song lyrics as well as from audio analysis.
+This repository contains the files of the current version of the WASABI Song Corpus, the models we have built on it as well as updates.
+
+## Abstract
+We present the WASABI Song Corpus, a large corpus of songs enriched with metadata extracted from  music databases on  the  Web, and resulting from the processing of song lyrics and from audio analysis. More specifically, given that lyrics encode an important part of the semantics of a song, we focus here on the description of the methods we proposed to extract relevant information from the lyrics, such as their structure segmentation, their topics, the explicitness of the lyrics content, the salient passages of a song and the emotions conveyed. The creation of the resource is still ongoing: so far, the corpus contains 1.73M songs with lyrics (1.41M unique lyrics)  annotated at different levels with the output of the above mentioned methods. Such corpus labels and the provided methods can be exploited by music search engines and music professionals (e.g. journalists, radio presenters) to better handle large collections of lyrics, allowing an  intelligent browsing, categorization and segmentation recommendation of songs.
 
 ## Overview
 - The WASABI Song Corpus consists of CSV files containing the songs, the artists and the albums.
@@ -21,7 +24,7 @@ We present the WASABI Song Corpus, a collection of 2.1M songs enriched with meta
 The packages present when successfully running the code are listed in the file [pip list --local](https://github.com/micbuffa/WasabiDataset/blob/master/pip%20list%20--local).
 
 ## Usage examples
-The [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows how to use the different resources.
+This [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows how to use the different resources.
 
 ## Downloading lyrics
 A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/)
