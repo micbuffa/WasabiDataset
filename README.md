@@ -16,9 +16,12 @@ We present the WASABI Song Corpus, a collection of 2.1M songs enriched with meta
 - NLP Models
   - [Explicit lyrics classifier trained on 438k lyrics](https://mega.nz/#!ndx3zQ4I!K6Qq6Bvf9NXWHejPvMyxwTUJGn-U8K6auuN0gCktcmU)
   - [LDA topic model trained on 1.05M lyrics](https://mega.nz/#!KFhh2AyC!-OaAifvACt3CAo-Pl-D14LIOb6Gx4ReJzjmqY7StwCY)
-  
-## Working with the data
-Our [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows the dependencies and examples on how to use the different resources.
+
+## Dependencies
+The packages present when successfully running the code are listed in the file [pip list --local](https://github.com/micbuffa/WasabiDataset/blob/master/pip%20list%20--local).
+
+## Usage examples
+The [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows how to use the different resources.
 
 ## Downloading lyrics
 A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/)
