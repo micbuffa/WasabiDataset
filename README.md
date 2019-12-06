@@ -27,16 +27,14 @@ The packages present when successfully running the code are listed in the file [
 This [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows how to use the different resources.
 
 ## Downloading lyrics
-A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/).
-
-Example query:
+A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/):
 ```
 import lyricwikia
 lyrics = lyricwikia.get_lyrics('Led Zeppelin', 'Stairway to heaven')
 ```
 
 ### Citation
-If you use our resource, please cite the following article:
+If you use our resource, please cite our paper:
 ```
 @article{fell2019love,
     title={Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations},
