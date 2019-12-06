@@ -37,13 +37,12 @@ lyrics = lyricwikia.get_lyrics('Led Zeppelin', 'Stairway to heaven')
 ### Citation
 If you use our resource, please cite the following article:
 ```
-@misc{fell2019love,
+@article{fell2019love,
     title={Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations},
     author={Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon},
+    journal={arXiv},
     year={2019},
-    eprint={1912.02477},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
+    volume={abs/1912.02477}
 }
 ```
 
