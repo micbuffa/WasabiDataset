@@ -4,6 +4,9 @@ This repository contains the files of the current version of the WASABI Song Cor
 ## Abstract
 We present the WASABI Song Corpus, a large corpus of songs enriched with metadata extracted from  music databases on  the  Web, and resulting from the processing of song lyrics and from audio analysis. More specifically, given that lyrics encode an important part of the semantics of a song, we focus here on the description of the methods we proposed to extract relevant information from the lyrics, such as their structure segmentation, their topics, the explicitness of the lyrics content, the salient passages of a song and the emotions conveyed. The creation of the resource is still ongoing: so far, the corpus contains 1.73M songs with lyrics (1.41M unique lyrics)  annotated at different levels with the output of the above mentioned methods. Such corpus labels and the provided methods can be exploited by music search engines and music professionals (e.g. journalists, radio presenters) to better handle large collections of lyrics, allowing an  intelligent browsing, categorization and segmentation recommendation of songs.
 
+## Interactive explorer
+The dataset can be explored using the [Wasabi Search engine](https://wasabi.i3s.unice.fr). Beware that certain copyrighted data (ex: full length lyrics or full track audio files) are not accessible if you are not a member of the Wasabi project.
+
 ## Overview
 - The WASABI Song Corpus consists of CSV files containing the songs, the artists and the albums.
   - [2.1M songs](https://mega.nz/#!GUhzBagS!dkWiRhRKCzTpbWtWcUvoD3Rrhleq50krvvg6n0SaI-w)
