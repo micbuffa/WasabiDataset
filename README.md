@@ -24,10 +24,10 @@ The dataset can be explored using the [WASABI Interactive Navigator](https://was
   - [LDA topic model trained on 1.05M lyrics](https://mega.nz/#!KFhh2AyC!-OaAifvACt3CAo-Pl-D14LIOb6Gx4ReJzjmqY7StwCY)
 
 ## Dependencies
-The packages present when successfully running the code are listed in the file [pip list --local](https://github.com/micbuffa/WasabiDataset/blob/master/pip%20list%20--local).
+The packages present when successfully running the code are listed in the file [pip list --local](doc/pip%20list%20--local).
 
 ## Usage examples
-This [Jupyter Notebook](https://github.com/micbuffa/WasabiDataset/blob/master/Showcase.ipynb) shows how to use the different resources.
+This [Jupyter Notebook](Showcase.ipynb) shows how to use the different resources.
 
 ## Downloading lyrics
 A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/):
@@ -47,5 +47,7 @@ If you use our resource, please cite the following article:
     volume={abs/1912.02477}
 }
 ```
+
+### License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
