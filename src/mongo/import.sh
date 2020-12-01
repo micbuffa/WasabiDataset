@@ -19,6 +19,8 @@ mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR
 collection=song
 mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR
 mongo --eval "db.${collection}.createIndex({id_artist_deezer: 1})" localhost/$DB
+mongo --eval "db.${collection}.createIndex({title: 1})" localhost/$DB
+mongo --eval "db.${collection}.createIndex({isClassic: 1})" localhost/$DB
 
 
 mongo localhost/$DB aggregate_song_artist.js

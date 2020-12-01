@@ -13,3 +13,9 @@ export collection=album
 
 export collection=song
 ./run_xr2rml.sh  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
+export collection=artist
+./run_xr2rml.sh  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
+export collection=artist_members
+./run_xr2rml.sh  mapping_${collection}.ttl  $ODIR/${collection}.ttl

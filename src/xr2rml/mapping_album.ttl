@@ -7,7 +7,7 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr:  <http://www.w3.org/ns/r2rml#> .
 @prefix schema: <http://schema.org/> .
-@prefix wsb: <http://ns.inria.fr/wasabi/ontology/wsb#> .
+@prefix wsb: <http://ns.inria.fr/wasabi/ontology/> .
 @prefix xrr: <http://i3s.unice.fr/xr2rml#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -15,7 +15,7 @@
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.album.find( { 'title' : {$exists: 1} } )""";
+        xrr:query """db.album.find({})""";
     ];
     rr:subjectMap [ 
     	rr:template "http://ns.inria.fr/wasabi/album/{$._id}";

@@ -1,0 +1,332 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <http://schema.org/> .
+@prefix wsb: <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xrr: <http://i3s.unice.fr/xr2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Artist_Member>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.artist_members.find()""";
+        rml:iterator "$.members.*";
+        xrr:pushDown [
+            xrr:reference "$._id";
+            xrr:as "id"
+        ];
+    ];
+    rr:subjectMap [ 
+    	rr:template "http://ns.inria.fr/wasabi/artist/{$.id}";
+    ];
+
+    # Object Members
+    rr:predicateObjectMap [
+        rr:predicate schema:members;
+        rr:objectMap [
+            rr:template "{$.id_member_discogs} {$.id_member_musicbrainz} {$.urlWikipedia} {$.name} {$.realName} {$.dbp_abstract} {$.urlDiscogs}";
+            rr:termType rr:BlankNode;
+        ];
+    ].
+
+
+<Members>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.artist_members.find()""";
+        rml:iterator "$.members.*";
+    ];
+    rr:subjectMap [ 
+    	rr:template "{$.id_member_discogs} {$.id_member_musicbrainz} {$.urlWikipedia} {$.name} {$.realName} {$.dbp_abstract} {$.urlDiscogs}";
+        rr:termType rr:BlankNode;
+    ];
+
+    # Member's name
+    rr:predicateObjectMap [
+        rr:predicate foaf:name;
+        rr:objectMap [ 
+            xrr:reference "$.name";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Member's real name
+    rr:predicateObjectMap [
+        rr:predicate wsb:real_name;
+        rr:objectMap [ 
+            xrr:reference "$.realName";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Member's gender
+    rr:predicateObjectMap [
+        rr:predicate foaf:gender;
+        rr:objectMap [ 
+            xrr:reference "$.gender";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Id Member Discogs
+    rr:predicateObjectMap [
+        rr:predicate wsb:discogs_id ;
+        rr:objectMap [ 
+            xrr:reference "$.id_member_discogs"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Id Member MusicBrainz
+    rr:predicateObjectMap [
+        rr:predicate mo:musicbrainz_guid;
+        rr:objectMap [ 
+            xrr:reference "$.id_member_musicbrainz"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Abstract
+    rr:predicateObjectMap [
+        rr:predicate dcterms:abstract;
+        rr:objectMap [ 
+            xrr:reference "$.abstract"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # DBPedia Abstract
+    rr:predicateObjectMap [
+        rr:predicate dbo:abstract;
+        rr:objectMap [ 
+            xrr:reference "$.dbp_abstract"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Subject
+    rr:predicateObjectMap [
+        rr:predicate dcterms:subject;
+        rr:objectMap [ 
+            xrr:reference "$.subject"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Birthdate
+    rr:predicateObjectMap [
+        rr:predicate schema:birthDate;
+        rr:objectMap [ 
+            xrr:reference "$.birthDate";
+            rr:termType rr:Literal;
+            rr:datatype xsd:date;
+        ];  
+    ];
+
+    # Start
+    rr:predicateObjectMap [
+        rr:predicate schema:startDate;
+        rr:objectMap [ 
+            xrr:reference "$.begin";
+            rr:termType rr:Literal;
+            rr:datatype xsd:date;
+        ];  
+    ];
+
+    # End
+    rr:predicateObjectMap [
+        rr:predicate schema:endDate;
+        rr:objectMap [ 
+            xrr:reference "$.end";
+            rr:termType rr:Literal;
+            rr:datatype xsd:date;
+        ];  
+    ];
+
+    # Disambiguation
+    rr:predicateObjectMap [
+        rr:predicate schema:disambiguatingDescription;
+        rr:objectMap [ 
+            xrr:reference "$.disambiguation"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+
+    # Array name variations
+    rr:predicateObjectMap [
+        rr:predicate schema:alternateName;
+        rr:objectMap [ 
+            xrr:reference "$.nameVariations.*";
+        ]
+    ];
+
+    # Member's page
+    rr:predicateObjectMap [
+        rr:predicate mo:homepage;
+        rr:objectMap [ 
+            xrr:reference "$.urlOfficialWebsite"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Twitter page
+    rr:predicateObjectMap [
+        rr:predicate wsb:twitter_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlTwitter"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # EquipBoard page
+    rr:predicateObjectMap [
+        rr:predicate wsb:equipBoard_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlEquipBoard"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL LastFm
+    rr:predicateObjectMap [
+        rr:predicate wsb:lastFm_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlLastFm"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # YouTube page
+    rr:predicateObjectMap [
+        rr:predicate wsb:youTube_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlYouTube"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # GooglePlus page
+    rr:predicateObjectMap [
+        rr:predicate wsb:googlePlus_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlGooglePlus"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # SecondHandSongs page
+    rr:predicateObjectMap [
+        rr:predicate wsb:secondHandSongs_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlSecondHandSongs"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # SoundCloud page
+    rr:predicateObjectMap [
+        rr:predicate wsb:soundCloud_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlSoundCloud"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Instagram page
+    rr:predicateObjectMap [
+        rr:predicate wsb:instagram_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlInstagram"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # PureVolume page
+    rr:predicateObjectMap [
+        rr:predicate wsb:pureVolume_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlPureVolume"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # BBC page
+    rr:predicateObjectMap [
+        rr:predicate wsb:BBC_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlBBC"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Allmusic page
+    rr:predicateObjectMap [
+        rr:predicate wsb:allMusic_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlAllmusic"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+     # Wikipedia page
+    rr:predicateObjectMap [
+        rr:predicate mo:wikipedia;
+        rr:objectMap [ 
+            xrr:reference "$.urlWikipedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Wikidata page
+    rr:predicateObjectMap [
+        rr:predicate wsb:wikidata_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlWikidata"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Facebook page
+    rr:predicateObjectMap [
+        rr:predicate wsb:facebook_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlFacebook"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # MySpace page
+    rr:predicateObjectMap [
+        rr:predicate mo:myspace;
+        rr:objectMap [ 
+            xrr:reference "$.urlMySpace"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Discogs page
+    rr:predicateObjectMap [
+        rr:predicate mo:discogs;
+        rr:objectMap [ 
+            xrr:reference "$.urlDiscogs"; 
+            rr:termType rr:IRI;
+        ];
+    ].
