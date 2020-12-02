@@ -211,7 +211,7 @@ wsb:gain
   rdfs:domain wsb:Song ;
   rdfs:label "gain"@en ;
   rdfs:comment "concerns the signal"@en ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:float ;
 .
 wsb:instrument_type
   a owl:DatatypeProperty ;

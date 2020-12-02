@@ -57,7 +57,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -77,7 +77,7 @@
     rr:predicateObjectMap [
         rr:predicate schema:award;
         rr:objectMap [ 
-            xrr:reference "$.award"; 
+            xrr:reference "$.award.*";
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -197,7 +197,7 @@
         rr:objectMap [ 
             xrr:reference "$.bpm"; 
             rr:termType rr:Literal;
-            rr:datatype xsd:string;
+            rr:datatype xsd:float;
         ];
     ];
 
@@ -207,7 +207,7 @@
         rr:objectMap [ 
             xrr:reference "$.gain"; 
             rr:termType rr:Literal;
-            rr:datatype xsd:string;
+            rr:datatype xsd:float;
         ];
     ];
 
@@ -324,7 +324,7 @@
         rr:predicate mo:track_number;
         rr:objectMap [ 
             xrr:reference "$.position"; 
-            rr:datatype xsd:integer;
+            rr:datatype xsd:nonNegativeInteger;
         ];
     ];
 
@@ -379,7 +379,7 @@
     rr:predicateObjectMap [
         rr:predicate schema:releaseDate;
         rr:objectMap [ 
-            xrr:reference "$.releaseDate"; 
+            xrr:reference "$.releaseDate.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:date;
         ];
