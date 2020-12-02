@@ -12,6 +12,25 @@
 @prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
+
+<#Artist_Member_Id>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.artist_members.find()""";
+    ];
+    rr:subjectMap [ rr:template "http://ns.inria.fr/wasabi/artist/{$._id}" ];
+
+    # Object: members who are also artists
+    rr:predicateObjectMap [
+        rr:predicate schema:members;
+        rr:objectMap [
+            rr:template "http://ns.inria.fr/wasabi/artist/{$.members_id.*}";
+            rr:termType rr:IRI;
+        ];
+    ];
+.
+
 <#Artist_Member>
     a rr:TriplesMap;
     xrr:logicalSource [
@@ -24,15 +43,6 @@
         ];
     ];
     rr:subjectMap [ rr:template "http://ns.inria.fr/wasabi/artist/{$.id}" ];
-
-    # Object: members who are also artists
-    rr:predicateObjectMap [
-        rr:predicate schema:members;
-        rr:objectMap [
-            rr:template "http://ns.inria.fr/wasabi/artist/{$.members_id.*}";
-            rr:termType rr:IRI;
-        ];
-    ];
 
     # Object: members who are not artists
     rr:predicateObjectMap [
@@ -130,7 +140,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  

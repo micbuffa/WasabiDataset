@@ -16,7 +16,7 @@
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.song.find({})""";
+        xrr:query """db.song_nochords.find({})""";
     ];
     rr:subjectMap [ 
     	rr:template "http://ns.inria.fr/wasabi/song/{$._id}";
@@ -128,14 +128,6 @@
         rr:predicate schema:album;
         rr:objectMap [
             rr:template "http://ns.inria.fr/wasabi/album/{$.id_album.$oid}"; 
-        ];    
-    ];
-
-    # Id Artist
-    rr:predicateObjectMap [
-        rr:predicate mo:performer;
-        rr:objectMap [
-            rr:template "http://ns.inria.fr/wasabi/artist/{$.id_artist.$oid}"; 
         ];    
     ];
 
@@ -537,11 +529,12 @@
         ];
     ].
 
+
 <Classical_Music>
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.song.find( {'isClassic' : true} )""";
+        xrr:query """db.song_nochords.find( {'isClassic' : true} )""";
     ];
     rr:subjectMap [ 
     	rr:template "http://ns.inria.fr/wasabi/song/{$._id}";

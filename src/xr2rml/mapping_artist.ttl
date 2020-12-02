@@ -12,6 +12,7 @@
 @prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
+
 <#Artist_Person>
     a rr:TriplesMap;
     xrr:logicalSource [
@@ -163,7 +164,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -447,6 +448,7 @@
         ];
     ].
 
+
 <#Artist_Group>
     a rr:TriplesMap;
     xrr:logicalSource [
@@ -598,7 +600,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -881,6 +883,7 @@
             ];
         ];
     ].
+
 
 <#Choir>
     a rr:TriplesMap;
@@ -1033,7 +1036,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -1317,6 +1320,7 @@
         ];
     ].
 
+
 <#Orchestra>
     a rr:TriplesMap;
     xrr:logicalSource [
@@ -1468,7 +1472,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -1904,7 +1908,7 @@
     rr:predicateObjectMap [
         rr:predicate dcterms:subject;
         rr:objectMap [ 
-            xrr:reference "$.subject"; 
+            xrr:reference "$.subject.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -2188,14 +2192,15 @@
         ];
     ].
 
+
 <Artist_Location>
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.artist.find( { 'name' : {$exists: 1} } )""";
+        xrr:query """db.artist.find( {} )""";
         rml:iterator "$.location.*"
     ];
-    rr:subjectMap [ 
+    rr:subjectMap [
     	rr:template "{$.id_city_musicbrainz} {$.country} {$.city}";
         rr:termType rr:BlankNode;
     ];
