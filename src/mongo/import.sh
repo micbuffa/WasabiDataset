@@ -6,7 +6,7 @@
 . ../env.sh
 
 collection=artist
-mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR
+mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR/dump_2019-11-19
 mongo --eval "db.${collection}.createIndex({id_artist_deezer: 1})" localhost/$DB
 mongo localhost/$DB aggregate_artist_id.js
 mongo localhost/$DB aggregate_artist_without_members.js
@@ -14,13 +14,16 @@ mongo localhost/$DB aggregate_artist_members.js
 
 
 collection=album
-mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR
+mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR/dump_2019-11-19
 
 
 collection=song
-mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR
+mongorestore --nsInclude=${DB}.${collection} $WASABI_DUMP_DIR/dump_2019-11-19
 mongo --eval "db.${collection}.createIndex({id_artist_deezer: 1})" localhost/$DB
 mongo --eval "db.${collection}.createIndex({title: 1})" localhost/$DB
 mongo --eval "db.${collection}.createIndex({isClassic: 1})" localhost/$DB
 mongo localhost/$DB lighten_song.js
 mongo localhost/$DB aggregate_song_artist.js
+
+collection=song_enhanced_chords
+mongoimport --type=json -d $DB -c ${collection} $WASABI_DUMP_DIR/songCollectionWithEnhancedChords.json

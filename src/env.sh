@@ -12,5 +12,4 @@ export DB=wasabi
 # Dataset id (end of the dataset URI)
 export WASABI_DATASET=dataset-${WASABI_VERSION_DASH}
 
-# Directory of CORD19 archive (unzipped)
-export WASABI_DUMP_DIR=/appli/wasabi/mongodb/dump_2019-11-19
+export WASABI_DUMP_DIR=/appli/wasabi/mongo-dump
