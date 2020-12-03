@@ -8,8 +8,7 @@ db.song.aggregate([
 ])
 
 db.song_chords.drop()
-db.song.aggregate([
+db.song_enhanced_chords.aggregate([
     { $project: { chords_metadata: 1 }},
     { $out: "song_chords" }
 ])
-

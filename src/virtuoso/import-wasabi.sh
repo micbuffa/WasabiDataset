@@ -16,3 +16,18 @@ graph="http://ns.inria.fr/wasabi/graph/albums"
     --graph $graph \
     --path $DATASET_DIR \
     album.ttl
+
+graph="http://ns.inria.fr/wasabi/graph/artists"
+./virtuoso-import.sh \
+    --cleargraph \
+    --graph $graph \
+    --path $DATASET_DIR \
+    artist.ttl artist_members.ttl
+
+graph="http://ns.inria.fr/wasabi/graph/songs"
+./virtuoso-import.sh \
+    --cleargraph \
+    --graph $graph \
+    --path $DATASET_DIR \
+    'song_nochords.ttl.*' song_artist_id.ttl
+
