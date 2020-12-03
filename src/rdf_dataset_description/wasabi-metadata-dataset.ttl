@@ -1,0 +1,82 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#>.
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix void:   <http://rdfs.org/ns/void#>.
+
+@prefix wsb:    <http://ns.inria.fr/wasabi/ontology/> .
+
+wsb:wasabi-1-0
+    a               dcat:Dataset, schema:Dataset;
+    dct:title       "Wasabi dataset";
+    schema:name     "Wasabi dataset";
+    dct:description "The WASABI Song Corpus is a large corpus of songs enriched with metadata extracted from music databases on the Web, and resulting from the processing of song lyrics and from audio analysis. This dataset is the RDF representation of the original Wasabi dataset.";
+
+    dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
+    schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
+    owl:versionInfo "1.0";
+    dct:issued      "2020-12-02"^^xsd:date; schema:datePublished "2020-12-02"^^xsd:date;
+    
+    dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
+    schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
+    
+    dct:creator      <https://team.inria.fr/wimmics/>;
+    schema:author    <https://team.inria.fr/wimmics/>;
+    dce:publisher    <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
+    schema:publisher <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
+    schema:subjectOf wsb:fell2019love;
+
+    a prov:Entity;
+    prov:wasGeneratedBy     wsb:RdfGeneration;
+    prov:wasGeneratedAtTime "2020-12-02"^^xsd:date;
+    .
+
+
+<http://univ-cotedazur.fr>  foaf:name "University Côte d'Azur"; schema:name "University Côte d'Azur".
+<https://www.inria.fr>      foaf:name "Inria"; schema:name "Inria".
+<https://www.cnrs.fr>       foaf:name "CNRS"; schema:name "CNRS".
+
+
+wsb:RdfGeneration
+    a               prov:Activity;
+    dct:title       "RDF generation process"; rdfs:label "RDF generation process";
+    dct:description "Transformation of the Wasabi dataset to RDF using the Morph-xR2RML mapping pocessing engine";
+    prov:wasAssociatedWith wsb:xR2RML.
+
+wsb:xR2RML
+    a               prov:SoftwareAgent;
+    foaf:homepage   <https://github.com/frmichel/morph-xr2rml/>;
+    dct:title       "Morph-xR2RML"; rdfs:label "Morph-xR2RML";
+    dct:description "Implementation of the xR2RML mapping language for MongoDB";
+    dce:creator     "Franck Michel"; schema:author "Franck Michel";
+    dct:licence     <http://www.apache.org/licenses/LICENSE-2.0>;
+    owl:versionInfo "1.3.1";
+    schema:subjectOf wsb:hal01207828.
+
+wsb:hal01207828 
+    a               <https://data.archives-ouvertes.fr/doctype/Article>, bibo:AcademicArticle, schema:ScholarlyArticle;
+    dct:title       "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    schema:name     "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    dct:issued      "2015"^^xsd:gYear; schema:datePublished "2015"^^xsd:gYear;
+    dct:bibliographicCitation "Franck Michel, Loïc Djimenou, Catherine Faron Zucker, Johan Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML. Proceedings of the WebIST'15 Conference, 2015, Lisbon, Portugal. pp.443-454";
+    bibo:doi        "10.5220/0005448304430454";
+    dce:creator     "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
+    schema:author   "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
+    schema:sameAs   <https://hal.archives-ouvertes.fr/hal-01207828>;
+    schema:about    wsb:xR2RML.
+
+wsb:fell2019love
+    a               <https://data.archives-ouvertes.fr/doctype/Article>, bibo:AcademicArticle, schema:ScholarlyArticle;
+    dct:title       "Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations";
+    schema:name     "Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations";
+    dct:issued      "2019"^^xsd:gYear; schema:datePublished "2019"^^xsd:gYear;
+    dct:bibliographicCitation "Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon. Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations. arXiv:1912.02477";
+    dce:creator     "Michael Fell", "Elena Cabrio", "Elmahdi Korfed", "Michel Buffa", "Fabien Gandon";
+    schema:author   "Michael Fell", "Elena Cabrio", "Elmahdi Korfed", "Michel Buffa", "Fabien Gandon".
