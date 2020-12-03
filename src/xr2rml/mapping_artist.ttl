@@ -28,7 +28,6 @@
         rr:predicate schema:birthDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.begin";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -38,7 +37,6 @@
         rr:predicate schema:deathDate;
         rr:objectMap [
             xrr:reference "$.lifeSpan.end";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ].
@@ -60,7 +58,6 @@
         rr:predicate schema:foundingDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.begin";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -70,7 +67,6 @@
         rr:predicate schema:dissolutionDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.end";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ].
@@ -91,7 +87,6 @@
         rr:predicate schema:foundingDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.begin";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -101,7 +96,6 @@
         rr:predicate schema:dissolutionDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.end";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ].
@@ -122,7 +116,6 @@
         rr:predicate schema:foundingDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.begin";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -132,7 +125,6 @@
         rr:predicate schema:dissolutionDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.end";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ].
@@ -153,7 +145,6 @@
         rr:predicate schema:foundingDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.begin";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -163,7 +154,6 @@
         rr:predicate schema:dissolutionDate;
         rr:objectMap [ 
             xrr:reference "$.lifeSpan.end";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ].
@@ -182,17 +172,15 @@
     	rr:predicate mo:uuid ;
     	rr:objectMap [ 
             xrr:reference "$._id";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
 
     # Artist's name
     rr:predicateObjectMap [
-        rr:predicate foaf:name;
-        rr:objectMap [ 
+        rr:predicate foaf:name, rdfs:label;
+        rr:objectMap [
             xrr:reference "$.name";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
             ];  
     ];
@@ -202,7 +190,6 @@
         rr:predicate foaf:gender;
         rr:objectMap [ 
             xrr:reference "$.gender";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -212,7 +199,6 @@
         rr:predicate wsb:deezer_artist_id;
         rr:objectMap [ 
             xrr:reference "$.id_artist_deezer"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -222,7 +208,6 @@
         rr:predicate mo:musicbrainz_guid;
         rr:objectMap [ 
             xrr:reference "$.id_artist_musicbrainz"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -232,7 +217,6 @@
         rr:predicate wsb:discogs_id;
         rr:objectMap [ 
             xrr:reference "$.id_artist_discogs";
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -242,7 +226,6 @@
         rr:predicate wsb:name_without_accent;
         rr:objectMap [ 
             xrr:reference "$.name_accent_fold"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -252,7 +235,6 @@
         rr:predicate schema:disambiguatingDescription;
         rr:objectMap [ 
             xrr:reference "$.disambiguation"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -262,7 +244,6 @@
         rr:predicate wsb:deezer_fans;
         rr:objectMap [ 
             xrr:reference "$.deezerFans"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:integer;
         ];
     ];
@@ -308,7 +289,6 @@
         rr:predicate dcterms:abstract;
         rr:objectMap [ 
             xrr:reference "$.abstract"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -318,7 +298,6 @@
         rr:predicate dcterms:subject;
         rr:objectMap [ 
             xrr:reference "$.subject.*"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -328,7 +307,6 @@
         rr:predicate dbo:abstract;
         rr:objectMap [ 
             xrr:reference "$.dbp_abstract"; 
-            rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
     ];
@@ -432,7 +410,7 @@
 
     # Array genres
     rr:predicateObjectMap [
-        rr:predicate mo:genre;
+        rr:predicate schema:genre;
         rr:objectMap [ 
             xrr:reference "$.genres.*";
         ];
@@ -456,7 +434,7 @@
 
     # Array labels
     rr:predicateObjectMap [
-        rr:predicate rdfs:label;
+        rr:predicate wsb:record_label;
         rr:objectMap [ 
             xrr:reference "$.labels.*";
         ];

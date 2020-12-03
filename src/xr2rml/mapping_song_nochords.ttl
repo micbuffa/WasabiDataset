@@ -87,7 +87,7 @@
     rr:predicateObjectMap [
         rr:predicate wsb:record_label;
         rr:objectMap [ 
-            xrr:reference "$.recordLabel"; 
+            xrr:reference "$.recordLabel.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -97,7 +97,7 @@
     rr:predicateObjectMap [
         rr:predicate mo:producer;
         rr:objectMap [ 
-            xrr:reference "$.producer"; 
+            xrr:reference "$.producer.*"; 
             rr:termType rr:Literal;
             rr:datatype xsd:string;
         ];  
@@ -283,10 +283,10 @@
     # Song Length
     rr:predicateObjectMap [
         rr:predicate mo:duration;
-        rr:objectMap [ 
-            rr:template "PT{$.length}S";
+        rr:objectMap [
+            rr:template "{$.length}000";
             rr:termType rr:Literal;
-            rr:datatype xsd:duration;
+            rr:datatype xsd:float;
         ];
     ];
 
@@ -299,16 +299,6 @@
         ];
     ];
 
-
-    # Album's length
-    rr:predicateObjectMap [
-        rr:predicate wsb:album_length;
-        rr:objectMap [ 
-            xrr:reference "$.lengthAlbum"; 
-            rr:termType rr:Literal;
-            rr:datatype xsd:string;
-        ];
-    ];
 
     # URL de la chanson
     rr:predicateObjectMap [

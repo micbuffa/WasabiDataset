@@ -303,7 +303,6 @@ wsb:record_label
   owl:equivalentProperty dbo:recordLabel ;
   rdfs:domain wsb:Song ;
   rdfs:label "record label"@en ;
-  rdfs:comment "This represents record labels obtained by the artist."@en ;
 .
 wsb:song_notes
   a owl:DatatypeProperty ;
