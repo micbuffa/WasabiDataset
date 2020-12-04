@@ -3,10 +3,8 @@
 
 
 // Collection of all artists without field members
-db.artist_without_members.drop()
-db.artist.aggregate([
-    
-    { $project: { members: 0 }},
+db.album_enhanced.drop()
+db.album.aggregate([
 
     // Replace https with http in all Wikipedia URLs to have a common format needed for creating DBpedia URIs )
     { $addFields: { urlWikipedia: { $replaceOne: { input: "$urlWikipedia",  find: "https://af.wikipedia.org/", replacement: "http://af.wikipedia.org/" }}}},
@@ -54,18 +52,5 @@ db.artist.aggregate([
     { $addFields: { uriDBpedia:  { $replaceOne: { input: "$uriDBpedia", find: "http://sv.wikipedia.org/wiki/", replacement: "http://sv.dbpedia.org/resource/" }}}},
     { $addFields: { uriDBpedia:  { $replaceOne: { input: "$uriDBpedia", find: "http://vi.wikipedia.org/wiki/", replacement: "http://vi.dbpedia.org/resource/" }}}},
     
-    { $addFields: {
-        // Turn Wikidata URL into Wikidata URI
-        uriWikidata:   { $replaceOne: { input: "$urlWikidata",  find: "https://www.wikidata.org/wiki/", replacement: "http://www.wikidata.org/entity/" }},
-
-        // Turn DBpedia genre strings into DBpedia URIs
-        dbp_genre_uri: {
-            $map: { 
-                input: "$dbp_genre", 
-                as: "one_dbp_genre", 
-                in: { $concat: [ "http://dbpedia.org/resource/", {$replaceOne: { input: "$$one_dbp_genre",    find: " ", replacement: "_"}}]}
-            }
-        }
-    }},    
-    { $out: "artist_without_members" }
+    { $out: "album_enhanced" }
 ])

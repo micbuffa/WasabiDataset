@@ -2,12 +2,17 @@
 // Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
 
-// Collection of all artists without field members
-db.artist_without_members.drop()
-db.artist.aggregate([
-    
-    { $project: { members: 0 }},
+db.song_chords.drop()
+db.song_enhanced_chords.aggregate([
+    { $project: { chords_metadata: 1 }},
+    { $out: "song_chords" }
+])
 
+
+db.song_nochords.drop()
+db.song.aggregate([
+    { $project: { chords_metadata: 0 }},
+    
     // Replace https with http in all Wikipedia URLs to have a common format needed for creating DBpedia URIs )
     { $addFields: { urlWikipedia: { $replaceOne: { input: "$urlWikipedia",  find: "https://af.wikipedia.org/", replacement: "http://af.wikipedia.org/" }}}},
     { $addFields: { urlWikipedia: { $replaceOne: { input: "$urlWikipedia",  find: "https://da.wikipedia.org/", replacement: "http://da.wikipedia.org/" }}}},
@@ -53,19 +58,6 @@ db.artist.aggregate([
     { $addFields: { uriDBpedia:  { $replaceOne: { input: "$uriDBpedia", find: "http://tr.wikipedia.org/wiki/", replacement: "http://tr.dbpedia.org/resource/" }}}},
     { $addFields: { uriDBpedia:  { $replaceOne: { input: "$uriDBpedia", find: "http://sv.wikipedia.org/wiki/", replacement: "http://sv.dbpedia.org/resource/" }}}},
     { $addFields: { uriDBpedia:  { $replaceOne: { input: "$uriDBpedia", find: "http://vi.wikipedia.org/wiki/", replacement: "http://vi.dbpedia.org/resource/" }}}},
-    
-    { $addFields: {
-        // Turn Wikidata URL into Wikidata URI
-        uriWikidata:   { $replaceOne: { input: "$urlWikidata",  find: "https://www.wikidata.org/wiki/", replacement: "http://www.wikidata.org/entity/" }},
-
-        // Turn DBpedia genre strings into DBpedia URIs
-        dbp_genre_uri: {
-            $map: { 
-                input: "$dbp_genre", 
-                as: "one_dbp_genre", 
-                in: { $concat: [ "http://dbpedia.org/resource/", {$replaceOne: { input: "$$one_dbp_genre",    find: " ", replacement: "_"}}]}
-            }
-        }
-    }},    
-    { $out: "artist_without_members" }
+        
+    { $out: "song_nochords" }
 ])

@@ -16,7 +16,7 @@
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.album.find({})""";
+        xrr:query """db.album_enhanced.find({})""";
     ];
     rr:subjectMap [ 
     	rr:template "http://ns.inria.fr/wasabi/album/{$._id}";
@@ -248,6 +248,15 @@
         rr:predicate mo:wikipedia;
         rr:objectMap [ 
             xrr:reference "$.urlWikipedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # DBpedia equivalent resource
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            xrr:reference "$.uriDBpedia"; 
             rr:termType rr:IRI;
         ];
     ];

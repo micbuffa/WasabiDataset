@@ -8,6 +8,7 @@
 @prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr:      <http://www.w3.org/ns/r2rml#> .
 @prefix schema:  <http://schema.org/> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
 @prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
 @prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
@@ -420,7 +421,8 @@
     rr:predicateObjectMap [
         rr:predicate dbo:genre;
         rr:objectMap [ 
-            xrr:reference "$.dbp_genre.*";
+            xrr:reference "$.dbp_genre_uri.*";
+            rr:termType rr:IRI;
         ];
     ];
 
@@ -457,6 +459,15 @@
         ];
     ];
 
+    # DBpedia equivalent resource
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            xrr:reference "$.uriDBpedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
     # Wikidata page
     rr:predicateObjectMap [
         rr:predicate wsb:wikidata_page;
@@ -466,6 +477,15 @@
         ];
     ];
 
+    # Wikidata equivalent resource
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            xrr:reference "$.uriWikidata"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+    
     # Discogs page
     rr:predicateObjectMap [
         rr:predicate mo:discogs;

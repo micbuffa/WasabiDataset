@@ -517,7 +517,17 @@
             xrr:reference "$.urlWikipedia"; 
             rr:termType rr:IRI;
         ];
-    ].
+    ];
+
+    # DBpedia equivalent resource
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            xrr:reference "$.uriDBpedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+    .
 
 
 <Classical_Music>
