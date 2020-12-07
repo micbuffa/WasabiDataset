@@ -1,0 +1,98 @@
+@prefix af:     <http://purl.org/ontology/af/>.
+@prefix chord:   <http://purl.org/ontology/chord/>.
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+
+<#Song_Chords_Metadata>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.song_chords_round.find()""";
+    ];
+                
+    rr:subjectMap [ rr:template "http://ns.inria.fr/wasabi/song/{$._id}" ];
+
+    # Chord's confidence
+    rr:predicateObjectMap [
+        rr:predicate af:confidence;
+        rr:objectMap [ 
+            xrr:reference "$.chords_metadata.confidence";
+            rr:datatype xsd:float;
+        ];
+    ];
+
+    # Chord's duration
+    rr:predicateObjectMap [
+        rr:predicate schema:duration;
+        rr:objectMap [ 
+            # PT93.0231065759S ok, PT93.02310657596S nok
+            rr:template "PT{$.chords_metadata.round_duration}S";
+            rr:termType rr:Literal;
+            rr:datatype xsd:duration;
+        ];
+    ];
+
+    # Object Chords Sequence
+    rr:predicateObjectMap [
+        rr:predicate wsb:chord_sequence;
+        rr:objectMap [
+            xrr:reference "$.chords_metadata.chordSequence.*";
+            rr:termType xrr:RdfList;
+            xrr:nestedTermMap [
+                rr:template "{$.start} {$.end} {$.label}";
+                rr:termType rr:BlankNode;
+            ];
+        ];
+    ].
+
+
+<Chord_sequence>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.song_chords_round.find()""";
+        rml:iterator "$.chords_metadata.chordSequence.*";
+    ];
+    rr:subjectMap [
+    	rr:template "{$.start} {$.end} {$.label}";
+        rr:termType rr:BlankNode;
+    ];
+
+    # URI
+    rr:predicateObjectMap [
+        rr:predicate chord:chord;
+        rr:objectMap [ 
+            xrr:reference "$.additionalProperties.uri";
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Start time
+    rr:predicateObjectMap [
+        rr:predicate schema:startTime;
+        rr:objectMap [ 
+            xrr:reference "$.additionalProperties.startTime";
+            rr:datatype xsd:time;
+        ];
+    ];
+
+    # End time
+    rr:predicateObjectMap [
+        rr:predicate schema:endTime;
+        rr:objectMap [ 
+            xrr:reference "$.additionalProperties.stopTime";
+            rr:datatype xsd:time;
+        ];  
+    ].
