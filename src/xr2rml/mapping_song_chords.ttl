@@ -37,7 +37,6 @@
     rr:predicateObjectMap [
         rr:predicate schema:duration;
         rr:objectMap [ 
-            # PT93.0231065759S ok, PT93.02310657596S nok
             rr:template "PT{$.chords_metadata.round_duration}S";
             rr:termType rr:Literal;
             rr:datatype xsd:duration;
@@ -51,7 +50,7 @@
             xrr:reference "$.chords_metadata.chordSequence.*";
             rr:termType xrr:RdfList;
             xrr:nestedTermMap [
-                rr:template "{$.start} {$.end} {$.label}";
+                rr:template "{$.id}_{$.additionalProperties.startTime}_{$.additionalProperties.stopTime}_{$.label}";
                 rr:termType rr:BlankNode;
             ];
         ];
@@ -66,8 +65,8 @@
         rml:iterator "$.chords_metadata.chordSequence.*";
     ];
     rr:subjectMap [
-    	rr:template "{$.start} {$.end} {$.label}";
-        rr:termType rr:BlankNode;
+                rr:template "{$.id}_{$.additionalProperties.startTime}_{$.additionalProperties.stopTime}_{$.label}";
+                rr:termType rr:BlankNode;
     ];
 
     # URI

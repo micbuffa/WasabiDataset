@@ -319,14 +319,14 @@
     ];
 
     # Lyrics de la chanson
-    rr:predicateObjectMap [
-        rr:predicate wsb:lyrics;
-        rr:objectMap [ 
-            xrr:reference "$.lyrics"; 
-            rr:termType rr:Literal;
-            rr:datatype xsd:string;
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate wsb:lyrics;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.lyrics"; 
+    #        rr:termType rr:Literal;
+    #        rr:datatype xsd:string;
+    #    ];
+    #];
 
     # URL Allmusic
     rr:predicateObjectMap [
@@ -469,14 +469,14 @@
 
 
     # Animux content
-    rr:predicateObjectMap [
-        rr:predicate wsb:animux_content;
-        rr:objectMap [ 
-            xrr:reference "$.animux_content"; 
-            rr:termType rr:Literal;
-            rr:datatype xsd:string;
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate wsb:animux_content;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.animux_content"; 
+    #        rr:termType rr:Literal;
+    #        rr:datatype xsd:string;
+    #    ];
+    #];
 
     # Array available countries
     rr:predicateObjectMap [
