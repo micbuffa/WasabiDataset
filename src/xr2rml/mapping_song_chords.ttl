@@ -19,7 +19,7 @@
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.song_chords_round.find()""";
+        xrr:query """db.{{collection}}.find()""";
     ];
                 
     rr:subjectMap [ rr:template "http://ns.inria.fr/wasabi/song/{$._id}" ];
@@ -61,7 +61,7 @@
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.song_chords_round.find()""";
+        xrr:query """db.{{collection}}.find()""";
         rml:iterator "$.chords_metadata.chordSequence.*";
     ];
     rr:subjectMap [

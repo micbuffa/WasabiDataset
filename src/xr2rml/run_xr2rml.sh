@@ -1,7 +1,8 @@
 #!/bin/bash
 # Input argument:
-# - arg1: xR2RML mapping file
-# - arg2: output file name
+# - arg1: MongoDB collection name
+# - arg2: xR2RML mapping file
+# - arg3: output file name
 #
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 #
@@ -13,17 +14,20 @@ JAR=$XR2RML/morph-xr2rml-dist-1.3.1-jar-with-dependencies.jar
 help()
 {
   exe=$(basename $0)
-  echo "Usage: $exe <xR2RML mapping> <output file name>"
+  echo "Usage: $exe <MongoDB collection> <xR2RML mapping> <output file name>"
   echo "Example:"
-  echo "   $exe  mappingAlbum.ttl  album.ttl"
+  echo "   $exe  album  mapping_album.ttl  album.ttl"
   exit 1
 }
 
 # --- Read input arguments
-mappingFile=$1
+collection=$1
+if [[ -z "$collection" ]] ; then help; fi
+
+mappingFile=$2
 if [[ -z "$mappingFile" ]] ; then help; fi
 
-output=$2
+output=$3
 if [[ -z "$output" ]] ; then help; fi
 
 
