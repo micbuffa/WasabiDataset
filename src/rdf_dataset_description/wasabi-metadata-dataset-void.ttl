@@ -11,9 +11,9 @@
 @prefix schema: <http://schema.org/>.
 @prefix void:   <http://rdfs.org/ns/void#>.
 
-@prefix wsb:    <http://ns.inria.fr/wasabi/ontology/> .
+@prefix ws:     <http://ns.inria.fr/wasabi/> .
 
-wsb:wasabi-1-0
+ws:wasabi-1-0
     a                   void:Dataset;
     void:uriSpace       "http://ns.inria.fr/wasabi/";
     void:triples        "0"^^xsd:integer;
