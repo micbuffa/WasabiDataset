@@ -1,4 +1,4 @@
-@prefix af:      <https://w3id.org/afo/onto/1.1#> .
+@prefix af:      <http://purl.org/ontology/af/> .
 @prefix chord:   <http://purl.org/ontology/chord/> .
 @prefix dbo:     <http://dbpedia.org/ontology/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
