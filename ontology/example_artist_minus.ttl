@@ -1,0 +1,63 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808>
+    a wsb:Artist_Person;
+    rdfs:label "Michael Jackson"; foaf:name "Michael Jackson";
+    schema:alternateName "M. J.", "MJ", "M.J. Jackson", "MJackson", "M. Jackson", "M.Jackson", "M.J";
+    wsb:name_without_accent "Michael Jackson";
+    foaf:gender "Male";
+    schema:birthDate "1958-08-29";
+    schema:deathDate "2009-06-25";
+
+    dcterms:abstract "American singer, dancer, entertainer, (...)";
+    dbo:abstract "Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer (...)";
+    dcterms:subject "20th-century American businesspeople", "Motown artists", "21st-century American writers", "African-American male dancers";
+    schema:disambiguatingDescription "King of Pop";
+    dbo:associatedMusicalArtist "The_Jackson_5";
+    dbo:genre <http://dbpedia.org/resource/Dance-pop>, <http://dbpedia.org/resource/Funk>;
+    schema:genre "Disco", "New Jack Swing", "Soul", "Pop", "Rock";
+    wsb:record_label "Epic Records", "Legacy", "Motown";
+    
+    schema:image <http://e-cdn-images.deezer.com/images/artist/620963abda08cd7aa97aee40248bfe10/1000x1000-000000-80-0-0.jpg>;
+    schema:thumbnail <http://e-cdn-images.deezer.com/images/artist/620963abda08cd7aa97aee40248bfe10/56x56-000000-80-0-0.jpg>;
+
+    mo:uuid "56d93e0fce06f50c0fed8808";
+    wsb:deezer_artist_id "259";
+    wsb:discogs_id "15885";
+    mo:musicbrainz_guid "f27ec8db-af05-4f36-916e-3d57f91ecf5e";
+    wsb:deezer_fans 8066328;
+
+    owl:sameAs wd:Q2831, <http://dbpedia.org/resource/Michael_Jackson>;
+    mo:homepage <http://www.michaeljackson.com>;
+    mo:discogs <http://www.discogs.com/artist/15885>;
+    mo:musicbrainz <http://musicbrainz.org/artist/f27ec8db-af05-4f36-916e-3d57f91ecf5e>;
+    mo:myspace <https://myspace.com/michaeljackson>;
+    mo:wikipedia <http://en.wikipedia.org/wiki/Michael_Jackson>;
+    wsb:allMusic_page <http://www.allmusic.com/artist/mn0000467203>;
+    wsb:BBC_page <http://www.bbc.co.uk/music/artists/f27ec8db-af05-4f36-916e-3d57f91ecf5e>;
+    wsb:deezer_page <http://www.deezer.com/artist/259>;
+    wsb:facebook_page <http://www.facebook.com/michaeljackson>;
+    wsb:googlePlus_page <https://plus.google.com/%2BMichaelJackson/>;
+    wsb:iTunes_page <https://itunes.apple.com/us/artist/id32940>;
+    wsb:lastFm_page <http://www.last.fm/music/Michael%2BJackson>;
+    wsb:rateYourMusic_page <http://rateyourmusic.com/artist/michael_jackson>;
+    wsb:secondHandSongs_page <http://www.secondhandsongs.com/artist/254>;
+    wsb:spotify_page <https://play.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm>;
+    wsb:twitter_page <http://twitter.com/michaeljackson>;
+    wsb:wikia_page <Michael_Jackson>;
+    wsb:wikidata_page <https://www.wikidata.org/wiki/Q2831>;
+    wsb:youTube_page <https://www.youtube.com/user/michaeljackson>;
+    .
+
+# Jackson 5
+<http://ns.inria.fr/wasabi/artist/56d97fedcc2ddd0c0f6bcf52>
+      schema:members <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808> .
