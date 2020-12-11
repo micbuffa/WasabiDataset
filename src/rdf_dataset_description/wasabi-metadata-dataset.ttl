@@ -15,14 +15,14 @@
 
 ws:wasabi-1-0
     a               dcat:Dataset, schema:Dataset;
-    dct:title       "Wasabi dataset";
-    schema:name     "Wasabi dataset";
-    dct:description "The WASABI Song Corpus is a large corpus of songs enriched with metadata extracted from music databases on the Web, and resulting from the processing of song lyrics and from audio analysis. This dataset is the RDF representation of the original Wasabi dataset.";
+    dct:title       "The WASABI RDF Knowledge Graph";
+    schema:name     "The WASABI RDF Knowledge Graph";
+    dct:description "The WASABI Dataset is a large corpus of songs enriched with metadata extracted from music databases on the Web, and resulting from the processing of song lyrics and from audio analysis. This dataset is the RDF representation of the original WASABI dataset.";
 
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
     schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
     owl:versionInfo "1.0";
-    dct:issued      "2020-12-02"^^xsd:date; schema:datePublished "2020-12-02"^^xsd:date;
+    dct:issued      "2020-12-09"^^xsd:date; schema:datePublished "2020-12-09"^^xsd:date;
     
     dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
@@ -35,7 +35,7 @@ ws:wasabi-1-0
 
     a prov:Entity;
     prov:wasGeneratedBy     ws:RdfGeneration;
-    prov:wasGeneratedAtTime "2020-12-02"^^xsd:date;
+    prov:wasGeneratedAtTime "2020-12-09"^^xsd:date;
     .
 
 
@@ -47,7 +47,7 @@ ws:wasabi-1-0
 ws:RdfGeneration
     a               prov:Activity;
     dct:title       "RDF generation process"; rdfs:label "RDF generation process";
-    dct:description "Transformation of the Wasabi dataset to RDF using the Morph-xR2RML mapping pocessing engine";
+    dct:description "Transformation of the WASABI dataset to RDF using the Morph-xR2RML mapping pocessing engine";
     prov:wasAssociatedWith ws:xR2RML.
 
 ws:xR2RML

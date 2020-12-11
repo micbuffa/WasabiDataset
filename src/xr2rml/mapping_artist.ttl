@@ -8,11 +8,9 @@
 @prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr:      <http://www.w3.org/ns/r2rml#> .
 @prefix schema:  <http://schema.org/> .
-@prefix wd:      <http://www.wikidata.org/entity/> .
 @prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
 @prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-
 
 <#Artist_Person>
     a rr:TriplesMap;

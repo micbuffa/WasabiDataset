@@ -26,8 +26,8 @@ wsb:
   dcterms:contributor "Fabien Gandon";
   dcterms:contributor "Michel Buffa";
   dcterms:description "An ontology for describing music metadata."@en ;
-  dcterms:title "Wasabi Ontology"@en ;
-  rdfs:comment "This file specifies the set of OWL classes and properties to represent the Wasabi dataset's metadata."@en;
+  dcterms:title "WASABI Ontology"@en ;
+  rdfs:comment "The WASABI ontology specifies the set of classes and properties to represent the WASABI dataset's metadata."@en;
   foaf:homepage <https://github.com/micbuffa/WasabiDataset> ;  
   dcterms:created "2020-11-23"^^xsd:date;
   dcterms:issued "2020-11-23"^^xsd:date;

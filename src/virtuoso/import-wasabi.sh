@@ -31,3 +31,9 @@ graph="http://ns.inria.fr/wasabi/graph/songs"
     --path $DATASET_DIR \
     'song_nochords.ttl.*' song_artist_id.ttl
 
+graph="http://ns.inria.fr/wasabi/graph/chords"
+./virtuoso-import.sh \
+    --cleargraph \
+    --graph $graph \
+    --path $DATASET_DIR \
+    'song_chords_*.ttl'
