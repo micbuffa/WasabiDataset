@@ -63,21 +63,14 @@ wsb:Artist_Group
   rdfs:isDefinedby wsb: ;
   rdfs:label "artist group"@en ;
   rdfs:comment "Group of musicians."@en ;
-  rdfs:subClassOf mo:MusicGroup ;
+  owl:equivalentClass mo:MusicGroup ;
 .
 wsb:Artist_Person
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
   rdfs:label "artist person"@en ;
   rdfs:comment "Single person crearting music work (musician)."@en ;
-  rdfs:subClassOf mo:SoloMusicArtist ;
-.
-wsb:Instrument
-  a owl:Class ;
-  rdfs:isDefinedby wsb: ;
-  rdfs:label "instrument"@en ;
-  rdfs:comment "Instrument used by a musician (example: Gibson Dove)."@en ;
-  owl:equivalentClass mo:Instrument ;
+  owl:equivalentClass mo:SoloMusicArtist ;
 .
 wsb:Lyrics
   a owl:Class ;
@@ -106,7 +99,7 @@ wsb:album_length
   a owl:DatatypeProperty ;
   rdfs:isDefinedby wsb: ;
   rdfs:subPropertyOf schema:duration ;
-  rdfs:domain mo:MusicalManifestation ;
+  rdfs:domain wsb:Album ;
   rdfs:label "album length"@en ;
   rdfs:comment "Ex value : '42:19'."@en ;
   rdfs:range xsd:string ;
@@ -201,7 +194,7 @@ wsb:lyrics
   a owl:ObjectProperty ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain wsb:Song ;
-  rdfs:label "has lyrics"@en ;
+  rdfs:label "lyrics"@en ;
   rdfs:comment "Links a song to its lyrics"@en ;
   rdfs:range xsd:string ;
 .
@@ -212,14 +205,6 @@ wsb:gain
   rdfs:label "gain"@en ;
   rdfs:comment "concerns the signal"@en ;
   rdfs:range xsd:float ;
-.
-wsb:instrument_type
-  a owl:DatatypeProperty ;
-  rdfs:isDefinedby wsb: ;
-  rdfs:domain wsb:Instrument ;
-  rdfs:label "instrument type"@en ;
-  rdfs:comment "The type or family of a music instrument (guitar, piano,...)."@en ;
-  rdfs:range xsd:string ;
 .
 wsb:language_detected
   a owl:DatatypeProperty ;
