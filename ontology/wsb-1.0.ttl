@@ -130,7 +130,7 @@ wsb:city
   rdfs:domain foaf:Agent ;
   rdfs:label "city"@en ;
 .
-wsb:chords_sequence
+wsb:chord_sequence
   a owl:DatatypeProperty ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain wsb:Song ;
@@ -494,7 +494,7 @@ wsb:wikia_page
   rdfs:comment "Links an artist to its corresponding Wikia page."@en ;
 .
 wsb:wikidata_page
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:subClassOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
@@ -502,7 +502,7 @@ wsb:wikidata_page
   rdfs:comment "Links an artist to its corresponding Wikidata page."@en ;
 .
 wsb:youTube_page
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:subClassOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
