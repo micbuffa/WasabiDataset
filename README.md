@@ -133,6 +133,18 @@ Example of song metadata:
     .
 ```
 
+### Artist metadata
+
+Artist URIs are formatted as `http://ns.inria.fr/wasabi/artist/artist_id` artist_id being the artist's unique identifier.
+
+we distinguish 4 types of artists in the dataset: 
+- `wsb:Artist_Person` equivalent class to `mo:SoloMusicArtist` of the Music Ontology.
+- `wsb:Artist_Group` equivalent class to `mo:MusicGroup` of the Music Ontology.
+- `wsb:Choir` subclass of `mo:MusicArtist` of the Music Ontology.
+- `Orchestra` `mo:MusicArtist` of the Music Ontology.
+
+Example of song metadata:
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
