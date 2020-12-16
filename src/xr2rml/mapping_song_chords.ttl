@@ -50,48 +50,8 @@
             xrr:reference "$.chords_metadata.chordSequence.*";
             rr:termType xrr:RdfList;
             xrr:nestedTermMap [
-                rr:template "{$.id}_{$.additionalProperties.startTime}_{$.additionalProperties.stopTime}_{$.label}";
-                rr:termType rr:BlankNode;
+               x rr:reference "$.additionalProperties.uri";
+               rr:termType rr:IRI;
             ];
         ];
-    ].
-
-
-<Chord_sequence>
-    a rr:TriplesMap;
-    xrr:logicalSource [
-    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
-        xrr:query """db.{{collection}}.find()""";
-        rml:iterator "$.chords_metadata.chordSequence.*";
-    ];
-    rr:subjectMap [
-                rr:template "{$.id}_{$.additionalProperties.startTime}_{$.additionalProperties.stopTime}_{$.label}";
-                rr:termType rr:BlankNode;
-    ];
-
-    # URI
-    rr:predicateObjectMap [
-        rr:predicate chord:chord;
-        rr:objectMap [ 
-            xrr:reference "$.additionalProperties.uri";
-            rr:termType rr:IRI;
-        ];
-    ];
-
-    # Start time
-    rr:predicateObjectMap [
-        rr:predicate schema:startTime;
-        rr:objectMap [ 
-            xrr:reference "$.additionalProperties.startTime";
-            rr:datatype xsd:time;
-        ];
-    ];
-
-    # End time
-    rr:predicateObjectMap [
-        rr:predicate schema:endTime;
-        rr:objectMap [ 
-            xrr:reference "$.additionalProperties.stopTime";
-            rr:datatype xsd:time;
-        ];  
     ].

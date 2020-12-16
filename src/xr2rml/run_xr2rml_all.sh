@@ -37,7 +37,7 @@ collections=$(mongo $DB --eval "db.getCollectionNames()" | cut -d'"' -f2 | grep 
 for collection in $collections; do
     echo "Processing collection $collection"
     awk "{ gsub(/{{collection}}/, \"$collection\"); print }" $mappingTemplate > $mappingFile
-    ./run_xr2rml.sh  $collection  $mappingFile  $ODIR/${collection}.ttl
+    ./run_xr2rml.sh  $collection  $mappingFile  $ODIR/${collection}_notime.ttl
     index=$(($index + 1))
 done
 rm -f $mappingFile

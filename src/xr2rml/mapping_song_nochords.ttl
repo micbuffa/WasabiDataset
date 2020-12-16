@@ -479,12 +479,12 @@
     #];
 
     # Array available countries
-    rr:predicateObjectMap [
-        rr:predicate schema:location;
-        rr:objectMap [ 
-            xrr:reference "$.availableCountries.*";
-        ]
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:location;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.availableCountries.*";
+    #    ]
+    #];
 
     # Array format
     rr:predicateObjectMap [

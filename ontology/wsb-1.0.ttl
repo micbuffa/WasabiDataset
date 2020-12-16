@@ -27,7 +27,7 @@ wsb:
   dcterms:contributor "Michel Buffa";
   dcterms:description "An ontology for describing music metadata."@en ;
   dcterms:title "WASABI Ontology"@en ;
-  rdfs:comment "The WASABI ontology specifies the set of classes and properties to represent the WASABI dataset's metadata."@en;
+  rdfs:comment "The WASABI ontology specifies the set of classes and properties to represent the WASABI dataset's metadata."@en ;
   foaf:homepage <https://github.com/micbuffa/WasabiDataset> ;  
   dcterms:created "2020-11-23"^^xsd:date;
   dcterms:issued "2020-11-23"^^xsd:date;
@@ -42,9 +42,13 @@ wsb:
 wsb:Album
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "album"@en;
+  rdfs:label "album"@en ;
   rdfs:comment "A phonographic production containing a collection of songs by one or more composers."@en ;
-  rdfs:subClassOf mo:Record ;
+  owl:equivalentClass [
+    a owl:Restriction;
+    owl:onProperty mo:release_type;
+    owl:hasValue mo:album;
+  ];
 .
 wsb:Choir
   a owl:Class ;
@@ -84,7 +88,7 @@ wsb:Song
   rdfs:isDefinedby wsb: ;
   rdfs:label "song"@en ;
   rdfs:comment "A musical piece or track on a particular album."@en ;
-  rdfs:subClassOf mo:Track ;
+  owl:equivalentClass mo:Track ;
 .
 wsb:Classical_Music_Composition
   a owl:Class ;

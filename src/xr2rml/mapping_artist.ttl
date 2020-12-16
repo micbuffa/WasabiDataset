@@ -311,20 +311,20 @@
     ];
 
      # Artist's picture thumbnail
-    rr:predicateObjectMap [
-        rr:predicate schema:thumbnail;
-        rr:objectMap [
-            rr:template "{$.picture.small}";
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:thumbnail;
+    #    rr:objectMap [
+    #        rr:template "{$.picture.small}";
+    #    ];
+    #];
 
     # Artist's picture 
-    rr:predicateObjectMap [
-        rr:predicate schema:image;
-        rr:objectMap [
-            rr:template "{$.picture.xl}";
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:image;
+    #    rr:objectMap [
+    #        rr:template "{$.picture.xl}";
+    #    ];
+    #];
 
     # Spotify page
     rr:predicateObjectMap [

@@ -282,17 +282,18 @@
     ];
 
     # Album's cover thumbnail
-    rr:predicateObjectMap [
-        rr:predicate schema:thumbnail;
-        rr:objectMap [
-            rr:template "{$.cover.small}";
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:thumbnail;
+    #    rr:objectMap [
+    #        rr:template "{$.cover.small}";
+    #    ];
+    #];
 
     # Album's cover
-    rr:predicateObjectMap [
-        rr:predicate schema:image;
-        rr:objectMap [
-            rr:template "{$.cover.xl}";
-        ];
-    ].
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:image;
+    #    rr:objectMap [
+    #        rr:template "{$.cover.xl}";
+    #    ];
+    #]
+    .
