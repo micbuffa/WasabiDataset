@@ -205,6 +205,47 @@ Example of artist metadata:
       schema:members <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808> .
 ```
 
+### Album metadata
+
+Album URIs are formatted as `http://ns.inria.fr/wasabi/album/album_id` album_id being the album's unique identifier.
+
+Each album is linked to its artist as follows:
+- `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id`
+
+Example of album metadata:
+```turtle
+<http://ns.inria.fr/wasabi/album/5714debe25ac0d8aee36b8a2>
+      a       wsb:Album ;
+
+      dcterms:title "HIStory: Past, Present And Future, Book I" ;
+      mo:performer <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808> ;
+
+      schema:datePublished "1995"^^xsd:date ;
+      schema:releaseDate "1995-05-01"^^xsd:date ;
+      mo:genre "Pop" ;
+      wsb:album_length "148:45" ;
+
+      mo:uuid "5714debe25ac0d8aee36b8a2" ;
+      wsb:deezer_album_id "753320" ;
+      wsb:discogs_id "66271" ;
+      mo:upc  "884977149166" ;
+      mo:musicbrainz_guid "2324e560-e8ba-302d-a43d-2ea5ec9c83f7" ;
+      wsb:deezer_fans 108410 ;
+
+      schema:image <http://e-cdn-images.deezer.com/images/cover/fbed9a8cfcdd8a5e48cebbea8d8078ea/1000x1000-000000-80-0-0.jpg> ;
+      schema:thumbnail <http://e-cdn-images.deezer.com/images/cover/fbed9a8cfcdd8a5e48cebbea8d8078ea/56x56-000000-80-0-0.jpg> ;
+      
+      owl:sameAs <http://dbpedia.org/resource/HIStory:_Past%2C_Present_and_Future%2C_Book_I> ;
+      mo:discogs <http://www.discogs.com/master/66271> ;
+      mo:homepage <http://lyrics.wikia.com/Michael_Jackson:HIStory:_Past%2C_Present_And_Future%2C_Book_I_%281995%29> ;
+      mo:musicbrainz <http://musicbrainz.org/release-group/2324e560-e8ba-302d-a43d-2ea5ec9c83f7> ;
+      mo:wikipedia <http://en.wikipedia.org/wiki/HIStory:_Past%2C_Present_and_Future%2C_Book_I> ;
+      wsb:allMusic_page <http://www.allmusic.com/album/mw0000123992> ;
+      wsb:deezer_page <http://www.deezer.com/album/753320> ;
+      wsb:iTunes_page <https://itunes.apple.com/us/album/id310505551> ;
+      .
+```
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
