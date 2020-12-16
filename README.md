@@ -53,13 +53,12 @@ If you use our resource, please cite the following article:
 }
 ```
 
-## WASABI RDF Knowledge Graph
 
-The description of the musical data of the WASABI corpus amounts to describing its three main entities: song, artist and album.
+# WASABI RDF Knowledge Graph
 
-### Namespaces
+The WASABI RDF Knowledge Graph provides an RDF representation of songs, artists and albums, together with the information automatically extracted from lyrics and audio content.
 
-The namespaces we use in the examples below.
+It leverages the [WASABI ontology](ontology) that reuses classes and properties from other vocabularies. Not all the terms needed to describe resources were imported in the ontology. As a result, the resource descriptions use terms from multiple vocabularies whose namespaces and prefixes are given below.
 
 ```turtle
 @prefix af:      <http://purl.org/ontology/af/> .
@@ -76,179 +75,51 @@ The namespaces we use in the examples below.
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 ```
 
-### Song metadata
+## Song metadata
 
-Song URIs are formatted as `http://ns.inria.fr/wasabi/song/song_id` song_id being the song's unique identifier.
+Song URIs are formatted as `http://ns.inria.fr/wasabi/song/song_id` where song_id is the song's WASABI unique identifier.
 
 Each song is linked to its artist and the album in which it appears as follows:
-- `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id`
-- `schema:album <http://ns.inria.fr/wasabi/album/album_id`
+- `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id>`
+- `schema:album <http://ns.inria.fr/wasabi/album/album_id>`
 
 Among the song metadata, we find:
 - title (`dcterms:title`)
 - detected language (`wsb:language_detected`)
 - sound gain (`wsb:gain`)
 - number of explicit lyrics in the song (`wsb:explicit_lyrics_count`)
-- chord (`chord:chord`)
-- chord's confidence (`af:confidence`)
+- chords sequence (`wsb:chord_sequence`)
+- chords sequence confidence (`af:confidence`)
 - bpm (`mo:bpm`)
 
-Example of song metadata:
-```turtle
-<http://ns.inria.fr/wasabi/song/5714dedc25ac0d8aee4aeeb7>
-    a wsb:Song, wsb:Classical_Music_Composition;
+The ontology folder provides an [example of the RDF Turtle representation of "Bad" by Mickael Jackson](ontology/example_song.ttl).
 
-    dcterms:title "Bad"; wsb:title_without_accent "Bad";
-    dcterms:abstract "Bad is a song by American song writer and recording artist Michael Jackson (...)";
-    dcterms:subject "Michael Jackson songs", "1987 singles", "Song recordings produced by Quincy Jones";
-    schema:author "Michael Jackson", "Pitbull (rapper)";
-    mo:performer <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808>;
-    
-    schema:releaseDate "1987-09-07"^^xsd:date, "2012-08-14"^^xsd:date;
-    schema:datePublished "2007-11-13"^^xsd:date;
-    mo:producer "Quincy Jones";
-    schema:album <http://ns.inria.fr/wasabi/album/5714debe25ac0d8aee36b8a2>;
-    mo:track_number "5"^^xsd:nonNegativeInteger;
 
-    mo:uuid "5714dedc25ac0d8aee4aeeb7";
-    wsb:deezer_song_id "540993";
-    wsb:deezer_artist_id "259";
-    mo:musicbrainz_guid "47eaab1a-667b-490d-8094-168e7d0d9ad1";
+## Artist metadata
 
-    dcterms:format "12-inch single", "CD single", "Compact disc", "Gramophone record", "Music download";
-    dcterms:language "eng";
-    wsb:gain "-8.9"^^xsd:float;
-    wsb:language_detected "english";
-    wsb:rank 675040;
-    mo:bpm  "114.2"^^xsd:float;
-    mo:duration "247000"^^xsd:float;
-    mo:isrc "USSM11204980";
-    mo:preview <http://e-cdn-preview-6.deezer.com/stream/65bd2ff532662d9df17b117b06064c78-1.mp3>;
+Artist URIs are formatted as `http://ns.inria.fr/wasabi/artist/artist_id` where artist_id is the artist's WASABI unique identifier.
 
-    wsb:explicit_lyrics_count 2;
-    wsb:has_explicit_lyrics "false"^^xsd:boolean;
-
-    wsb:record_label "Epic Records";
-    wsb:recording_description "January 1987", "1987";
-
-    owl:sameAs <http://dbpedia.org/resource/Bad_%28Michael_Jackson_song%29>;
-    mo:homepage <http://lyrics.wikia.com/Michael_Jackson:Bad>;
-    mo:musicbrainz <http://musicbrainz.org/recording/47eaab1a-667b-490d-8094-168e7d0d9ad1>;
-    mo:wikipedia <http://en.wikipedia.org/wiki/Bad_%28Michael_Jackson_song%29>;
-    wsb:allMusic_page <http://www.allmusic.com/song/mt0010540276>;
-    wsb:deezer_page <http://www.deezer.com/track/59509531>;
-    wsb:goEar_page <http://goear.com/listen.php?v%3D780bfc7>;
-    wsb:iTunes_page <https://itunes.apple.com/us/album/id192990143?i%3D192990214>;
-    wsb:spotify_page <https://play.spotify.com/track/4xJjD28UsZlqbX7tBV3Aj5>;
-    .
-```
-
-### Artist metadata
-
-Artist URIs are formatted as `http://ns.inria.fr/wasabi/artist/artist_id` artist_id being the artist's unique identifier.
-
-we distinguish 4 types of artists in the dataset: 
-- `wsb:Artist_Person` equivalent class to `mo:SoloMusicArtist` of the Music Ontology.
-- `wsb:Artist_Group` equivalent class to `mo:MusicGroup` of the Music Ontology.
-- `wsb:Choir` subclass of `mo:MusicArtist` of the Music Ontology.
-- `wsb:Orchestra` `mo:MusicArtist` of the Music Ontology.
-
-Note that both `mo:SoloMusicArtist` and `mo:MusicGroup` are issued from `mo:MusicGroup`.
+We distinguish 4 types of artists in the dataset: 
+- `wsb:Artist_Person` equivalent to class `mo:SoloMusicArtist` of the Music Ontology,
+- `wsb:Artist_Group` equivalent to class `mo:MusicGroup` of the Music Ontology,
+- `wsb:Choir` and `wsb:Orchestra` that are subclasses of `mo:MusicArtist` of the Music Ontology.
 
 In the case where the artist is a group, it is made up of members that we represent in this way:
 - `schema:members <http://ns.inria.fr/wasabi/artist/artist_id>`
 
-Example of artist metadata:
-```turtle
-<http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808>
-    a wsb:Artist_Person;
-    rdfs:label "Michael Jackson"; foaf:name "Michael Jackson";
-    schema:alternateName "M. J.", "MJ", "M.J. Jackson", "MJackson", "M. Jackson", "M.Jackson", "M.J";
-    wsb:name_without_accent "Michael Jackson";
-    foaf:gender "Male";
-    schema:birthDate "1958-08-29";
-    schema:deathDate "2009-06-25";
+The ontology folder provides an [example of the RDF Turtle representation of Mickael Jackson](ontology/example_artist.ttl).
 
-    dcterms:abstract "American singer, dancer, entertainer, (...)";
-    dbo:abstract "Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer (...)";
-    dcterms:subject "20th-century American businesspeople", "Motown artists", "21st-century American writers", "African-American male dancers";
-    schema:disambiguatingDescription "King of Pop";
-    dbo:associatedMusicalArtist "The_Jackson_5";
-    dbo:genre <http://dbpedia.org/resource/Dance-pop>, <http://dbpedia.org/resource/Funk>;
-    schema:genre "Disco", "New Jack Swing", "Soul", "Pop", "Rock";
-    wsb:record_label "Epic Records", "Legacy", "Motown";
 
-    mo:uuid "56d93e0fce06f50c0fed8808";
-    wsb:deezer_artist_id "259";
-    wsb:discogs_id "15885";
-    mo:musicbrainz_guid "f27ec8db-af05-4f36-916e-3d57f91ecf5e";
-    wsb:deezer_fans 8066328;
+## Album metadata
 
-    owl:sameAs wd:Q2831, <http://dbpedia.org/resource/Michael_Jackson>;
-    mo:homepage <http://www.michaeljackson.com>;
-    mo:discogs <http://www.discogs.com/artist/15885>;
-    mo:musicbrainz <http://musicbrainz.org/artist/f27ec8db-af05-4f36-916e-3d57f91ecf5e>;
-    mo:myspace <https://myspace.com/michaeljackson>;
-    mo:wikipedia <http://en.wikipedia.org/wiki/Michael_Jackson>;
-    wsb:allMusic_page <http://www.allmusic.com/artist/mn0000467203>;
-    wsb:BBC_page <http://www.bbc.co.uk/music/artists/f27ec8db-af05-4f36-916e-3d57f91ecf5e>;
-    wsb:deezer_page <http://www.deezer.com/artist/259>;
-    wsb:facebook_page <http://www.facebook.com/michaeljackson>;
-    wsb:googlePlus_page <https://plus.google.com/%2BMichaelJackson/>;
-    wsb:iTunes_page <https://itunes.apple.com/us/artist/id32940>;
-    wsb:lastFm_page <http://www.last.fm/music/Michael%2BJackson>;
-    wsb:rateYourMusic_page <http://rateyourmusic.com/artist/michael_jackson>;
-    wsb:secondHandSongs_page <http://www.secondhandsongs.com/artist/254>;
-    wsb:spotify_page <https://play.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm>;
-    wsb:twitter_page <http://twitter.com/michaeljackson>;
-    wsb:wikia_page <Michael_Jackson>;
-    wsb:wikidata_page <https://www.wikidata.org/wiki/Q2831>;
-    wsb:youTube_page <https://www.youtube.com/user/michaeljackson>;
-    .
-
-# Jackson 5
-<http://ns.inria.fr/wasabi/artist/56d97fedcc2ddd0c0f6bcf52>
-      schema:members <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808> .
-```
-
-### Album metadata
-
-Album URIs are formatted as `http://ns.inria.fr/wasabi/album/album_id` album_id being the album's unique identifier.
+Album URIs are formatted as `http://ns.inria.fr/wasabi/album/album_id` where album_id is the album's WASABI unique identifier.
 
 Each album is linked to its artist as follows:
-- `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id`
+- `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id>`
 
-Example of album metadata:
-```turtle
-<http://ns.inria.fr/wasabi/album/5714debe25ac0d8aee36b8a2>
-      a       wsb:Album ;
+The ontology folder provides an [example of the RDF Turtle representation of alnum "HIStory" by Mickael Jackson](ontology/example_album.ttl).
 
-      dcterms:title "HIStory: Past, Present And Future, Book I" ;
-      mo:performer <http://ns.inria.fr/wasabi/artist/56d93e0fce06f50c0fed8808> ;
 
-      schema:datePublished "1995"^^xsd:date ;
-      schema:releaseDate "1995-05-01"^^xsd:date ;
-      mo:genre "Pop" ;
-      wsb:album_length "148:45" ;
-
-      mo:uuid "5714debe25ac0d8aee36b8a2" ;
-      wsb:deezer_album_id "753320" ;
-      wsb:discogs_id "66271" ;
-      mo:upc  "884977149166" ;
-      mo:musicbrainz_guid "2324e560-e8ba-302d-a43d-2ea5ec9c83f7" ;
-      wsb:deezer_fans 108410 ;
-      
-      owl:sameAs <http://dbpedia.org/resource/HIStory:_Past%2C_Present_and_Future%2C_Book_I> ;
-      mo:discogs <http://www.discogs.com/master/66271> ;
-      mo:homepage <http://lyrics.wikia.com/Michael_Jackson:HIStory:_Past%2C_Present_And_Future%2C_Book_I_%281995%29> ;
-      mo:musicbrainz <http://musicbrainz.org/release-group/2324e560-e8ba-302d-a43d-2ea5ec9c83f7> ;
-      mo:wikipedia <http://en.wikipedia.org/wiki/HIStory:_Past%2C_Present_and_Future%2C_Book_I> ;
-      wsb:allMusic_page <http://www.allmusic.com/album/mw0000123992> ;
-      wsb:deezer_page <http://www.deezer.com/album/753320> ;
-      wsb:iTunes_page <https://itunes.apple.com/us/album/id310505551> ;
-      .
-```
-
-## License
+# License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

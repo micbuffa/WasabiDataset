@@ -37,7 +37,6 @@
     mo:bpm  "114.2"^^xsd:float;
     mo:duration "247000"^^xsd:float;
     mo:isrc "USSM11204980";
-    mo:preview <http://e-cdn-preview-6.deezer.com/stream/65bd2ff532662d9df17b117b06064c78-1.mp3>;
 
     wsb:explicit_lyrics_count 2;
     wsb:has_explicit_lyrics "false"^^xsd:boolean;
