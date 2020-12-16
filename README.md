@@ -85,6 +85,7 @@ Each song is linked to its artist and the album in which it appears as follows:
 - `schema:album <http://ns.inria.fr/wasabi/album/album_id`
 
 Example of song metadata:
+```turtle
 <http://ns.inria.fr/wasabi/song/5714dedc25ac0d8aee4aeeb7>
     a wsb:Song, wsb:Classical_Music_Composition;
 
