@@ -177,9 +177,6 @@ Example of artist metadata:
     dbo:genre <http://dbpedia.org/resource/Dance-pop>, <http://dbpedia.org/resource/Funk>;
     schema:genre "Disco", "New Jack Swing", "Soul", "Pop", "Rock";
     wsb:record_label "Epic Records", "Legacy", "Motown";
-    
-    schema:image <http://e-cdn-images.deezer.com/images/artist/620963abda08cd7aa97aee40248bfe10/1000x1000-000000-80-0-0.jpg>;
-    schema:thumbnail <http://e-cdn-images.deezer.com/images/artist/620963abda08cd7aa97aee40248bfe10/56x56-000000-80-0-0.jpg>;
 
     mo:uuid "56d93e0fce06f50c0fed8808";
     wsb:deezer_artist_id "259";
@@ -240,9 +237,6 @@ Example of album metadata:
       mo:upc  "884977149166" ;
       mo:musicbrainz_guid "2324e560-e8ba-302d-a43d-2ea5ec9c83f7" ;
       wsb:deezer_fans 108410 ;
-
-      schema:image <http://e-cdn-images.deezer.com/images/cover/fbed9a8cfcdd8a5e48cebbea8d8078ea/1000x1000-000000-80-0-0.jpg> ;
-      schema:thumbnail <http://e-cdn-images.deezer.com/images/cover/fbed9a8cfcdd8a5e48cebbea8d8078ea/56x56-000000-80-0-0.jpg> ;
       
       owl:sameAs <http://dbpedia.org/resource/HIStory:_Past%2C_Present_and_Future%2C_Book_I> ;
       mo:discogs <http://www.discogs.com/master/66271> ;
