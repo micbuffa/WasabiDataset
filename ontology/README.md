@@ -37,11 +37,23 @@ The dataset also includes several calculated features. Here are a few examples:
 Furthermore, we also describe the chords of a song through the property:
 - **chords sequence** (`wsb:chord_sequence`) : an `rdf:List` of chords in the song
 
-### Main terms reused from other ontologies or common vocabularies
-For chords' description:
-- **confidence** (`af:confidence`) : from the Audio Features Ontology [`http://purl.org/ontology/af/`](http://purl.org/ontology/af/)
+### Examples of terms reused from other ontologies or common vocabularies
+To describe songs:
+- **performer** (`mo:performer`) : from the Music Ontology [`http://purl.org/ontology/mo/`](http://purl.org/ontology/mo/)
+- **author** (`schema:author`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
+- **publication date** (`schema:datePublished`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
+To describe artists:
+- **homepage** (`mo:homepage`) : from the Music Ontology [`http://purl.org/ontology/mo/`](http://purl.org/ontology/mo/)
+- **associated musical artist** (`dbo:associatedMusicalArtist`) : from the DBpedia ontology [`http://dbpedia.org/ontology/`](http://dbpedia.org/ontology/)
+- **genre** (`schema:genre`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
+To describe albums:
+- **title** (`dcterms:title`) : from the Dublin Core Metadata Vocabulary [`http://purl.org/dc/terms/`](http://purl.org/dc/terms/)
+- **upc** (`mo:upc`) : from the Music Ontology [`http://purl.org/ontology/mo/`](http://purl.org/ontology/mo/)
+- **release date** (`schema:releaseDate`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
+To describe chords:
 - **chord** (`chord:chord`) : from the Chord Ontology [`http://purl.org/ontology/chord/`](http://purl.org/ontology/chord/)
-- **duration** (`schema:duration`) : from the Chord Ontology [`http://schema.org/`](http://schema.org/)
+- **confidence** (`af:confidence`) : from the Audio Features Ontology [`http://purl.org/ontology/af/`](http://purl.org/ontology/af/)
+- **duration** (`schema:duration`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
 
 
 
