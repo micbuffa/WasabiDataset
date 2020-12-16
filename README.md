@@ -143,9 +143,10 @@ we distinguish 4 types of artists in the dataset:
 - `wsb:Artist_Group` equivalent class to `mo:MusicGroup` of the Music Ontology.
 - `wsb:Choir` subclass of `mo:MusicArtist` of the Music Ontology.
 - `wsb:Orchestra` `mo:MusicArtist` of the Music Ontology.
+
 Note that both `mo:SoloMusicArtist` and `mo:MusicGroup` are issued from `mo:MusicGroup`.
 
-In the case where the artist is a group, it is made up of members that we present in this way:
+In the case where the artist is a group, it is made up of members that we represent in this way:
 - `schema:members <http://ns.inria.fr/wasabi/artist/artist_id>`
 
 Example of artist metadata:
