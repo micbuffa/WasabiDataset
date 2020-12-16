@@ -84,6 +84,15 @@ Each song is linked to its artist and the album in which it appears as follows:
 - `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id`
 - `schema:album <http://ns.inria.fr/wasabi/album/album_id`
 
+Among the song metadata, we find:
+- title (`dcterms:title`)
+- detected language (`wsb:language_detected`)
+- sound gain (`wsb:gain`)
+- number of explicit lyrics in the song (`wsb:explicit_lyrics_count`)
+- chord (`chord:chord`)
+- chord's confidence (`af:confidence`)
+- bpm (`mo:bpm`)
+
 Example of song metadata:
 ```turtle
 <http://ns.inria.fr/wasabi/song/5714dedc25ac0d8aee4aeeb7>
