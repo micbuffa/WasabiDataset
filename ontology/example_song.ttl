@@ -10,7 +10,7 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 <http://ns.inria.fr/wasabi/song/5714dedc25ac0d8aee4aeeb7>
-    a wsb:Song, wsb:Classical_Music_Composition;
+    a wsb:Song, wsb:Classic_Song;
 
     dcterms:title "Bad"; wsb:title_without_accent "Bad";
     dcterms:abstract "Bad is a song by American song writer and recording artist Michael Jackson (...)";

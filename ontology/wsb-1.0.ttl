@@ -14,10 +14,7 @@
 # Ontology documentation - <http://ns.inria.fr/wasabi/ontology/>
 wsb:
   a owl:Ontology ;
-  owl:imports <http://dbpedia.org/ontology/> ;
-  owl:imports <http://purl.org/dc/terms/> ;
   owl:imports mo: ;
-  owl:imports foaf: ;
   owl:versionInfo "v1" ;
   dcterms:creator "Maroua Tikat" ;
   dcterms:creator <https://team.inria.fr/wimmics/>;
@@ -42,7 +39,7 @@ wsb:
 wsb:Album
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "album"@en ;
+  rdfs:label "Album"@en ;
   rdfs:comment "A phonographic production containing a collection of songs by one or more composers."@en ;
   owl:equivalentClass [
     a owl:Restriction;
@@ -53,48 +50,47 @@ wsb:Album
 wsb:Choir
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "choir"@en ;
+  rdfs:label "Choir"@en ;
   rdfs:subClassOf mo:MusicArtist , foaf:Group ;
 .
 wsb:Orchestra
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "orchestra"@en ;
+  rdfs:label "Orchestra"@en ;
   rdfs:subClassOf mo:MusicArtist , foaf:Group ;
 .
 wsb:Artist_Group
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "artist group"@en ;
+  rdfs:label "Artist group"@en ;
   rdfs:comment "Group of musicians."@en ;
   owl:equivalentClass mo:MusicGroup ;
 .
 wsb:Artist_Person
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "artist person"@en ;
+  rdfs:label "Artist person"@en ;
   rdfs:comment "Single person crearting music work (musician)."@en ;
   owl:equivalentClass mo:SoloMusicArtist ;
 .
 wsb:Lyrics
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "lyrics"@en ;
+  rdfs:label "Lyrics"@en ;
   rdfs:comment "Lyrics of a song."@en ;
   rdfs:subClassOf mo:Lyrics ;
 .
 wsb:Song
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  rdfs:label "song"@en ;
+  rdfs:label "Song"@en ;
   rdfs:comment "A musical piece or track on a particular album."@en ;
   owl:equivalentClass mo:Track ;
 .
-wsb:Classical_Music_Composition
+wsb:Classic_Song
   a owl:Class ;
   rdfs:isDefinedby wsb: ;
-  owl:equivalentClass dbo:ClassicalMusicComposition ;
-  rdfs:label "Classical music composition"@en ;
+  rdfs:label "Song that is a classic of pop/rock music"@en ;
 .
 
 # Properties

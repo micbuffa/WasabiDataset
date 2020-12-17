@@ -212,13 +212,13 @@
     ];
 
     # Preview
-    rr:predicateObjectMap [
-        rr:predicate mo:preview;
-        rr:objectMap [ 
-            xrr:reference "$.preview"; 
-            rr:termType rr:IRI;
-        ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate mo:preview;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.preview"; 
+    #        rr:termType rr:IRI;
+    #    ];
+    #];
 
     # Title Accent Fold
     rr:predicateObjectMap [
@@ -530,7 +530,7 @@
     .
 
 
-<Classical_Music>
+<Classic_Song>
     a rr:TriplesMap;
     xrr:logicalSource [
     	# Jongo needs strings in singles quotes (difference with MongoDB shell)
@@ -542,7 +542,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [ 
-            rr:constant wsb:Classical_Music_Composition;
+            rr:constant wsb:Classic_Song;
             rr:termType rr:IRI;
         ];
     ].
