@@ -37,3 +37,10 @@ graph="http://ns.inria.fr/wasabi/graph/chords"
     --graph $graph \
     --path $DATASET_DIR \
     'song_chords_*.ttl'
+
+graph="http://ns.inria.fr/wasabi/graph/metadata"
+./virtuoso-import.sh \
+    --cleargraph \
+    --graph $graph \
+    --path $CURRENT_DIR/../rdf_dataset_description \
+    '*.ttl'

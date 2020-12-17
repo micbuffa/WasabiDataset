@@ -19,16 +19,18 @@ ws:wasabi-1-0
     schema:name     "The WASABI RDF Knowledge Graph";
     dct:description "The WASABI Dataset is a large corpus of songs enriched with metadata extracted from music databases on the Web, and resulting from the processing of song lyrics and from audio analysis. This dataset is the RDF representation of the original WASABI dataset.";
 
-    dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
-    schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
+    dct:licence     <https://creativecommons.org/licenses/by-nc/4.0/>;
+    schema:licence  <https://creativecommons.org/licenses/by-nc/4.0/>;
     owl:versionInfo "1.0";
     dct:issued      "2020-12-09"^^xsd:date; schema:datePublished "2020-12-09"^^xsd:date;
     
     dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     
-    dct:creator      <https://team.inria.fr/wimmics/>;
-    schema:author    <https://team.inria.fr/wimmics/>;
+    dct:creator     "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    
+    schema:author    "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    
     dce:publisher    <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
     schema:publisher <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
     schema:subjectOf ws:fell2019love;
@@ -38,10 +40,15 @@ ws:wasabi-1-0
     prov:wasGeneratedAtTime "2020-12-09"^^xsd:date;
     .
 
-
-<http://univ-cotedazur.fr>  foaf:name "University Côte d'Azur"; schema:name "University Côte d'Azur".
-<https://www.inria.fr>      foaf:name "Inria"; schema:name "Inria".
-<https://www.cnrs.fr>       foaf:name "CNRS"; schema:name "CNRS".
+<http://univ-cotedazur.fr>  a foaf:Organization; foaf:name "University Côte d'Azur".
+<https://www.inria.fr>      a foaf:Organization; foaf:name "Inria".
+<https://www.cnrs.fr>       a foaf:Organization; foaf:name "CNRS".
+<https://orcid.org/0000-0001-9064-0463> a foaf:Person; foaf:name "Franck MICHEL".
+<https://orcid.org/0000-0003-0543-1232> a foaf:Person; foaf:name "Fabien Gandon".
+<https://orcid.org/0000-0003-1007-0101> a foaf:Person; foaf:name "Alain GIBOIN".
+<https://orcid.org/0000-0001-8158-5562> a foaf:Person; foaf:name "Romain HENNEQUIN".
+<https://orcid.org/0000-0002-0756-6934> a foaf:Person; foaf:name "Marco WINCKLER".
+<https://orcid.org/0000-0001-5959-5561> a foaf:Person; foaf:name "Catherine FARON".
 
 
 ws:RdfGeneration
@@ -55,7 +62,7 @@ ws:xR2RML
     foaf:homepage   <https://github.com/frmichel/morph-xr2rml/>;
     dct:title       "Morph-xR2RML"; rdfs:label "Morph-xR2RML";
     dct:description "Implementation of the xR2RML mapping language for MongoDB";
-    dce:creator     "Franck Michel"; schema:author "Franck Michel";
+    dct:creator     <https://orcid.org/0000-0001-9064-0463>; schema:author <https://orcid.org/0000-0001-9064-0463>;
     dct:licence     <http://www.apache.org/licenses/LICENSE-2.0>;
     owl:versionInfo "1.3.1";
     schema:subjectOf ws:hal01207828.
@@ -67,8 +74,8 @@ ws:hal01207828
     dct:issued      "2015"^^xsd:gYear; schema:datePublished "2015"^^xsd:gYear;
     dct:bibliographicCitation "Franck Michel, Loïc Djimenou, Catherine Faron Zucker, Johan Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML. Proceedings of the WebIST'15 Conference, 2015, Lisbon, Portugal. pp.443-454";
     bibo:doi        "10.5220/0005448304430454";
-    dce:creator     "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
-    schema:author   "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
+    dct:creator     <https://orcid.org/0000-0001-9064-0463>, "Loïc Djimenou", <https://orcid.org/0000-0001-5959-5561>, "Johan Montagnat";
+    schema:author   <https://orcid.org/0000-0001-9064-0463>, "Loïc Djimenou", <https://orcid.org/0000-0001-5959-5561>, "Johan Montagnat";
     schema:sameAs   <https://hal.archives-ouvertes.fr/hal-01207828>;
     schema:about    ws:xR2RML.
 

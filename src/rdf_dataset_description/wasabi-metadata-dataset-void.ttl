@@ -16,9 +16,9 @@
 ws:wasabi-1-0
     a                   void:Dataset;
     void:uriSpace       "http://ns.inria.fr/wasabi/";
-    void:triples        "0"^^xsd:integer;
+    void:triples        "136160000"^^xsd:integer;
     void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
-    void:dataDump       <to_be_defined>;
+    void:dataDump       <https://doi.org/10.5281/zenodo.4312641>;
     
     void:vocabulary     <http://www.w3.org/ns/dcat#>;
     void:vocabulary     <http://purl.org/dc/terms/>;
@@ -30,4 +30,35 @@ ws:wasabi-1-0
     void:vocabulary     <http://www.wikidata.org/entity/>;
     void:vocabulary     <http://purl.org/ontology/mo/>;
     void:vocabulary     <http://dbpedia.org/ontology/>;
+    void:vocabulary     <http://purl.org/ontology/af/>;
+    void:vocabulary     <http://purl.org/ontology/chord/>;
     .
+
+
+# --- Linksets
+
+ws:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+ws:wasabi2wikidata
+   a void:Linkset;
+   void:linkPredicate owl:sameAs, dbo:genre;
+   void:subjectsTarget ws:wasabi-1-0;
+   void:objectsTarget ws:Wikidata;
+   void:triples "34449"^^xsd:integer;
+   .
+
+ws:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+ws:wasabi2dbpedia
+   a void:Linkset;
+   void:linkPredicate owl:sameAs;
+   void:subjectsTarget ws:wasabi-1-0;
+   void:objectsTarget ws:DBpedia;
+   void:triples "222329"^^xsd:integer;
+   .
