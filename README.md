@@ -120,6 +120,26 @@ Each album is linked to its artist as follows:
 The ontology folder provides an [example of the RDF Turtle representation of alnum "HIStory" by Mickael Jackson](ontology/example_album.ttl).
 
 
+## Downloading and SPARQL Querying
+
+The dataset is downloadable as an RDF dump (in Turtle syntax) from Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4312641.svg)](https://doi.org/10.5281/zenodo.4312641)
+
+It can also be queried through our Virtuoso OS SPARQL endpoint http://wasabi.inria.fr/sparql.
+
+You may use the [Faceted Browser](http://wasabi.inria.fr/fct/) to look up text or URIs.
+
+
+The following **named graphs** can be queried from our SPARQL endpoint:
+
+| Named graph    | Description |
+| -------------  | ---- |
+| http://ns.inria.fr/wasabi/graph/ontology/ | WASABI ontology | 
+| http://ns.inria.fr/wasabi/graph/metadata | dataset description + definition of a few properties | 
+| http://ns.inria.fr/wasabi/graph/artists | artists metadata (name, genre, record label, web pages etc.) | 
+| http://ns.inria.fr/wasabi/graph/albums | albums metadata (title, publication date, length etc.) | 
+| http://ns.inria.fr/wasabi/graph/songs | songs metadata (title, album, artist, publication date, chords etc.) |
+
+
 # License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

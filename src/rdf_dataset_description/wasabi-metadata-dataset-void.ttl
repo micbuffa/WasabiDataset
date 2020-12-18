@@ -16,7 +16,7 @@
 ws:wasabi-1-0
     a                   void:Dataset;
     void:uriSpace       "http://ns.inria.fr/wasabi/";
-    void:triples        "136160000"^^xsd:integer;
+    void:triples        "55542555"^^xsd:integer;
     void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
     void:dataDump       <https://doi.org/10.5281/zenodo.4312641>;
     

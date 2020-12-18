@@ -44,14 +44,24 @@
     ];
 
     # Object Chords Sequence
+    #rr:predicateObjectMap [
+    #    rr:predicate wsb:chord_sequence;
+    #    rr:objectMap [
+    #        xrr:reference "$.chords_metadata.chordSequence.*";
+    #        rr:termType xrr:RdfList;
+    #        xrr:nestedTermMap [
+    #           x rr:reference "$.additionalProperties.uri";
+    #           rr:termType rr:IRI;
+    #        ];
+    #    ];
+    #];
+    
+    # Chord's duration
     rr:predicateObjectMap [
-        rr:predicate wsb:chord_sequence;
-        rr:objectMap [
-            xrr:reference "$.chords_metadata.chordSequence.*";
-            rr:termType xrr:RdfList;
-            xrr:nestedTermMap [
-               x rr:reference "$.additionalProperties.uri";
-               rr:termType rr:IRI;
-            ];
+        rr:predicate chord:chord;
+        rr:objectMap [ 
+            xrr:reference "$.chords_metadata.chordSequence.*.additionalProperties.uri";
+            rr:termType rr:IRI;
         ];
-    ].
+    ];
+    .
