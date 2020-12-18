@@ -34,8 +34,6 @@ The dataset also includes several calculated features. Here are a few examples:
 - **number of explicit lyrics** (`wsb:explicit_lyrics_count`)
 - **presence of explicit lyrics** (`wsb:has_explicit_lyrics`)
 - **name without title** (`wsb:name_without_accent`) : sub-property of `foaf:name`
-Furthermore, we also describe the chords of a song through the property:
-- **chords sequence** (`wsb:chord_sequence`) : an `rdf:List` of chords in the song
 
 ### Examples of terms reused from other ontologies or common vocabularies
 To describe songs:
