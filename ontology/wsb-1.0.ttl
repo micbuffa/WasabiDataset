@@ -126,14 +126,14 @@ wsb:city
   rdfs:domain foaf:Agent ;
   rdfs:label "city"@en ;
 .
-wsb:chord_sequence
-  a owl:DatatypeProperty ;
-  rdfs:isDefinedby wsb: ;
-  rdfs:domain wsb:Song ;
-  rdfs:label "chords sequence"@en ;
-  rdfs:comment "Chords sequence of a song with its beginning and end"@en ;
-  rdfs:range rdf:List ;
-.
+#wsb:chord_sequence
+#  a owl:DatatypeProperty ;
+#  rdfs:isDefinedby wsb: ;
+#  rdfs:domain wsb:Song ;
+#  rdfs:label "chords sequence"@en ;
+#  rdfs:comment "Chords sequence of a song with its beginning and end"@en ;
+#  rdfs:range rdf:List ;
+#.
 wsb:deezer_artist_id
   a owl:DatatypeProperty ;
   rdfs:isDefinedby wsb: ;
