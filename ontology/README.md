@@ -1,7 +1,5 @@
 # The WASABI ontology
 
-This first version of the ontology includes 8 classes and 50 properties.
-
 The WASABI ontology is a vocabulary to formalize the WASABI dataset's metadata. Written in the W3C OWL Web Ontology Language, it primarily relies on the [Music Ontology](http://purl.org/ontology/mo/) that defines a rich vocabulary for describing and linking music information, and extends it with terms about some specific entities and properties not covered by the Music Ontology.
 
 The WASABI ontology also reuses relevant terms from common vocabularies such as Dublin Core Metadata, FOAF, Schema.org and the DBpedia ontology, as well as some specific terms from the [Audio Features Ontology](http://purl.org/ontology/af/) and the [OMRAS2 Chord Ontology](http://purl.org/ontology/chord/).
