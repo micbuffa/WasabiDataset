@@ -24,7 +24,7 @@ The WASABI ontology extends the Muusic Ontology, which is why 7 out of 8 classes
 - **Choir** (`wsb:Choir`) & **Orchestra** (`wsb:Orchestra`) : subclasses of `mo:MusicArtist`
 - **Lyrics** (`wsb:Lyrics`) : equivalent class of `mo:Lyrics`
 - **Song** (`wsb:Song`) : equivalent class of `mo:Track`
-- **Classical music composition** (`wsb:Classical_Music_Composition`) : equivalent class of `dbo:ClassicalMusicComposition` from the DBpedia ontology
+- **Classic song of pop/rock music** (`wsb:Classic_Song`)
 
 ### Properties
 The wasabi dataset contains some specific properties that are not covered by the Music Ontology, of which 22 are links to social network pages, represented in the WASABI ontology as object properties.
