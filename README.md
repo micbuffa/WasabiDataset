@@ -133,7 +133,7 @@ The following **named graphs** can be queried from our SPARQL endpoint:
 
 | Named graph    | Description |
 | -------------  | ---- |
-| http://ns.inria.fr/wasabi/graph/ontology/ | WASABI ontology | 
+| http://ns.inria.fr/wasabi/ontology/ | WASABI ontology | 
 | http://ns.inria.fr/wasabi/graph/metadata | dataset description + definition of a few properties | 
 | http://ns.inria.fr/wasabi/graph/artists | artists metadata (name, genre, record label, web pages etc.) | 
 | http://ns.inria.fr/wasabi/graph/albums | albums metadata (title, publication date, length etc.) | 
@@ -142,4 +142,8 @@ The following **named graphs** can be queried from our SPARQL endpoint:
 
 # License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+
+The Wasabi dataset is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+The code used to produce the dataset, provided in folder src, is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).

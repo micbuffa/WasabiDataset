@@ -330,7 +330,7 @@ wsb:title_without_accent
 
 wsb:BBC_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "BBC page"@en ;
@@ -338,7 +338,7 @@ wsb:BBC_page
 .
 wsb:allMusic_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "allMusic page"@en ;
@@ -346,7 +346,7 @@ wsb:allMusic_page
 .
 wsb:amazon_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "amazon page"@en ;
@@ -354,7 +354,7 @@ wsb:amazon_page
 .
 wsb:deezer_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "deezer page"@en ;
@@ -362,7 +362,7 @@ wsb:deezer_page
 .
 wsb:equipBoard_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "equipBoard page"@en ;
@@ -370,7 +370,7 @@ wsb:equipBoard_page
 .
 wsb:facebook_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "facebook page"@en ;
@@ -378,7 +378,7 @@ wsb:facebook_page
 .
 wsb:goEar_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain wsb:Song ;
   rdfs:label "goEar page"@en ;
@@ -386,7 +386,7 @@ wsb:goEar_page
 .
 wsb:googlePlus_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "googlePlus page"@en ;
@@ -394,7 +394,7 @@ wsb:googlePlus_page
 .
 wsb:hypeMachine_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain wsb:Song ;
   rdfs:label "hypeMachine page"@en ;
@@ -402,7 +402,7 @@ wsb:hypeMachine_page
 .
 wsb:iTunes_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "iTunes page"@en ;
@@ -410,7 +410,7 @@ wsb:iTunes_page
 .
 wsb:instagram_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "instagram page"@en ;
@@ -418,7 +418,7 @@ wsb:instagram_page
 .
 wsb:lastFm_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "lastFm page"@en ;
@@ -426,7 +426,7 @@ wsb:lastFm_page
 .
 wsb:pandora_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain wsb:Song ;
   rdfs:label "pandora page"@en ;
@@ -434,7 +434,7 @@ wsb:pandora_page
 .
 wsb:pureVolume_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "pureVolume page"@en ;
@@ -442,7 +442,7 @@ wsb:pureVolume_page
 .
 wsb:rateYourMusic_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "rateYourMusic page"@en ;
@@ -450,7 +450,7 @@ wsb:rateYourMusic_page
 .
 wsb:secondHandSongs_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:subPropertyOf foaf:homepage ;
   rdfs:domain foaf:Agent ;
@@ -459,7 +459,7 @@ wsb:secondHandSongs_page
 .
 wsb:soundCloud_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "soundCloud page"@en ;
@@ -467,7 +467,7 @@ wsb:soundCloud_page
 .
 wsb:spotify_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "spotify page"@en ;
@@ -475,7 +475,7 @@ wsb:spotify_page
 .
 wsb:twitter_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "twitter page"@en ;
@@ -483,7 +483,7 @@ wsb:twitter_page
 .
 wsb:wikia_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "wikia page"@en ;
@@ -491,7 +491,7 @@ wsb:wikia_page
 .
 wsb:wikidata_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain foaf:Agent ;
   rdfs:label "wikidata page"@en ;
@@ -499,7 +499,7 @@ wsb:wikidata_page
 .
 wsb:youTube_page
   a owl:ObjectProperty ;
-  rdfs:subClassOf foaf:page ;
+  rdsf:subPropertyOf foaf:page ;
   rdfs:isDefinedby wsb: ;
   rdfs:domain owl:Thing ;
   rdfs:label "youTube page"@en ;
