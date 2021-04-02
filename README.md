@@ -35,21 +35,23 @@ The packages present when successfully running the code are listed in the file [
 This [Jupyter Notebook](Showcase.ipynb) shows how to use the different resources.
 
 ## Downloading lyrics
-A simple yet effective way to obtain lyrics is querying [LyricWiki](https://lyrics.fandom.com/wiki/LyricWiki) via the Python module [lyricswikia](https://pypi.org/project/lyricwikia/):
-```
-import lyricwikia
-lyrics = lyricwikia.get_lyrics('Led Zeppelin', 'Stairway to heaven')
-```
+
+Initially, the songs lyrics were retrieved from the LyricsWikia service that helped bootstrap the WASABI project. However, we cannot redistribute the lyrics since these are copyrighted material.
+
+As of today (2020), LyricsWikia is no longer availabile. Some NLP researchers managed to use our ML models on full lyrics that they obtained from other sources, in particular the commercial MusixMatch service (that provides large parts of the lyrics for free) or other online web site from where they could scrap the lyrics.
+
+We have plans to complete the dataset in the next three years (starting 2021), and we have already written scripts that use MusixMatch to perform lyrics analysis on the upcoming new content.
+
 
 ### Citation
 If you use our resource, please cite the following article:
 ```
 @article{fell2019love,
-    title={Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations},
-    author={Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon},
-    journal={arXiv},
-    year={2019},
-    volume={abs/1912.02477}
+  title={Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations},
+  author={Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon},
+  journal={arXiv},
+  year={2019},
+  volume={abs/1912.02477}
 }
 ```
 

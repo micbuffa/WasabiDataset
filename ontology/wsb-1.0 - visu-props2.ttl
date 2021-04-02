@@ -1,0 +1,232 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdt:     <http://www.wikidata.org/prop/direct/> .
+
+wsb:deezer_artist_id
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty wdt:P2722 ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "deezer artist id"@en ;
+  
+.
+wsb:deezer_album_id
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty wdt:P2723 ;
+  rdfs:domain wsb:Album ;
+  rdfs:label "deezer album id"@en ;
+  
+.
+wsb:deezer_song_id
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty wdt:P2724 ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "deezer song id"@en ;
+  
+.
+
+wsb:discogs_id
+  a owl:DatatypeProperty ;
+  
+  
+  rdfs:label "discogs id"@en ;
+  
+
+.
+wsb:musicbrainz_id
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "musicbrainz id"@en ;
+  
+.
+
+
+# Properties linking to web pages
+
+wsb:BBC_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "BBC page"@en ;
+.
+wsb:allMusic_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "allMusic page"@en ;
+
+.
+wsb:amazon_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "amazon page"@en ;
+  
+.
+wsb:deezer_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "deezer page"@en ;
+  
+.
+wsb:equipBoard_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "equipBoard page"@en ;
+  
+.
+wsb:facebook_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "facebook page"@en ;
+  
+.
+wsb:goEar_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "goEar page"@en ;
+  
+.
+wsb:googlePlus_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "googlePlus page"@en ;
+  
+.
+wsb:hypeMachine_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "hypeMachine page"@en ;
+  
+.
+wsb:iTunes_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "iTunes page"@en ;
+  
+.
+wsb:instagram_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "instagram page"@en ;
+  
+.
+wsb:lastFm_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "lastFm page"@en ;
+  
+.
+wsb:pandora_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "pandora page"@en ;
+  
+.
+wsb:pureVolume_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "pureVolume page"@en ;
+  
+.
+wsb:rateYourMusic_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "rateYourMusic page"@en ;
+  
+.
+wsb:secondHandSongs_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:subPropertyOf foaf:homepage ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "secondHandSongs page"@en ;
+  
+.
+wsb:soundCloud_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "soundCloud page"@en ;
+  
+.
+wsb:spotify_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "spotify page"@en ;
+  
+.
+wsb:twitter_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "twitter page"@en ;
+  
+.
+wsb:wikia_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "wikia page"@en ;
+  
+.
+wsb:wikidata_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  rdfs:domain foaf:Agent ;
+  rdfs:label "wikidata page"@en ;
+  
+.
+wsb:youTube_page
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf foaf:page ;
+  
+  
+  rdfs:label "youTube page"@en ;
+  
+.

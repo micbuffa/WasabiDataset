@@ -1,0 +1,206 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdt:     <http://www.wikidata.org/prop/direct/> .
+
+
+
+# Properties
+
+wsb:album_length
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf schema:duration ;
+  rdfs:domain wsb:Album ;
+  rdfs:label "album length"@en ;
+  
+  
+.
+wsb:animux_content
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "animux content"@en ;
+  
+  
+.
+wsb:country
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty dbo:country ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "country"@en ;
+.
+wsb:city
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty dbo:city ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "city"@en ;
+.
+#wsb:chord_sequence
+#  a owl:DatatypeProperty ;
+#  
+#  rdfs:domain wsb:Song ;
+#  rdfs:label "chords sequence"@en ;
+#  
+#  rdfs:range rdf:List ;
+#.
+
+wsb:deezer_fans
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain owl:Thing ;
+  rdfs:label "deezer fans"@en ;
+  
+  rdfs:range xsd:integer ;
+.
+wsb:explicit_lyrics_count
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "explicit content lyrics"@en ;
+  
+  
+.
+wsb:has_explicit_lyrics
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain mo:MusicalManifestation ;
+  rdfs:label "explicitLyrics"@en ;
+  
+  rdfs:range xsd:boolean ;
+.
+wsb:lyrics
+  a owl:ObjectProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "lyrics"@en ;
+  
+  
+.
+wsb:gain
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "gain"@en ;
+  
+  rdfs:range xsd:float ;
+.
+wsb:language_detected
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf dcterms:language ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "detected language"@en ;
+  
+  
+.
+wsb:location
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf schema:location ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "location"@en ;
+  
+  
+.
+wsb:multitrack_file
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "multitrack file"@en ;
+  
+  
+.
+wsb:multitrack_path
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "multitrack path"@en ;
+  
+  
+.
+wsb:name_without_accent
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf foaf:name ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "name without accent"@en ;
+  
+  
+.
+wsb:rank
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty dbo:rank ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "rank"@en ;
+  
+.
+wsb:real_name
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf foaf:name ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "real name"@en ;
+  
+  
+.
+wsb:recording_description
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf dcterms:description ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "recording description"@en ;
+  
+  
+.
+wsb:record_label
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty dbo:recordLabel ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "record label"@en ;
+.
+wsb:song_notes
+  a owl:DatatypeProperty ;
+  
+  owl:equivalentProperty dbo:notes ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song notes"@en ;
+  
+.
+wsb:song_summary
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf dcterms:abstract ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song summary"@en ;
+  
+  
+.
+wsb:song_timeSide_uuid
+  a owl:DatatypeProperty ;
+  
+  rdfs:domain wsb:Song ;
+  rdfs:label "song timeSide uuid"@en ;
+  
+  
+.
+wsb:title_without_accent
+  a owl:DatatypeProperty ;
+  
+  rdfs:subPropertyOf dcterms:title ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "title accent fold"@en ;
+  
+  
+.

@@ -1,0 +1,91 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdt:     <http://www.wikidata.org/prop/direct/> .
+
+
+# Ontology documentation - <http://ns.inria.fr/wasabi/ontology/>
+wsb:
+  a owl:Ontology ;
+  owl:imports mo: ;
+  owl:versionInfo "v1" ;
+  dcterms:creator "Maroua Tikat" ;
+  dcterms:creator <https://team.inria.fr/wimmics/>;
+  schema:author <https://team.inria.fr/wimmics/>;
+  dcterms:contributor "Frank Michel" ;
+  dcterms:contributor "Fabien Gandon";
+  dcterms:contributor "Michel Buffa";
+  dcterms:description "An ontology for describing music metadata."@en ;
+  dcterms:title "WASABI Ontology"@en ;
+  
+  foaf:homepage <https://github.com/micbuffa/WasabiDataset> ;  
+  dcterms:created "2020-11-23"^^xsd:date;
+  dcterms:issued "2020-11-23"^^xsd:date;
+  dcterms:publisher "Inria";
+  dcterms:type <http://purl.org/adms/assettype/Ontology>;
+  dcterms:status <http://purl.org/adms/status/UnderDevelopment>;
+  dcterms:licence <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
+.
+
+#Classes
+
+wsb:Album
+  a owl:Class ;
+  rdfs:label "Album"@en ;
+  
+  owl:equivalentClass [
+    a owl:Restriction;
+    owl:onProperty mo:release_type;
+    owl:hasValue mo:album;
+  ];
+.
+wsb:Choir
+  a owl:Class ;
+  rdfs:label "Choir"@en ;
+  rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+.
+wsb:Orchestra
+  a owl:Class ;
+  rdfs:label "Orchestra"@en ;
+  rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+.
+wsb:Artist_Group
+  a owl:Class ;
+  
+  rdfs:label "Artist group"@en ;
+  
+  owl:equivalentClass mo:MusicGroup ;
+.
+wsb:Artist_Person
+  a owl:Class ;
+  
+  rdfs:label "Artist person"@en ;
+  
+  owl:equivalentClass mo:SoloMusicArtist ;
+.
+wsb:Lyrics
+  a owl:Class ;
+  
+  rdfs:label "Lyrics"@en ;
+  
+  rdfs:subClassOf mo:Lyrics ;
+.
+wsb:Song
+  a owl:Class ;
+  
+  rdfs:label "Song"@en ;
+  
+  owl:equivalentClass mo:Track ;
+.
+wsb:Classic_Song
+  a owl:Class ;
+  
+  rdfs:label "Song that is a classic of pop/rock music"@en ;
+.
