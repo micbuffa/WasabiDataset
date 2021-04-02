@@ -10,6 +10,13 @@
 CURRENT_DIR=$(pwd)
 DATASET_DIR=$CURRENT_DIR/../xr2rml/$WASABI_DATASET
 
+graph="http://ns.inria.fr/wasabi/graph/metadata"
+./virtuoso-import.sh \
+    --cleargraph \
+    --graph $graph \
+    --path $CURRENT_DIR/../rdf_dataset_description \
+    '*.ttl'
+
 graph="http://ns.inria.fr/wasabi/graph/albums"
 ./virtuoso-import.sh \
     --cleargraph \
@@ -30,10 +37,3 @@ graph="http://ns.inria.fr/wasabi/graph/songs"
     --graph $graph \
     --path $DATASET_DIR \
     'song_nochords.ttl.*' song_artist_id.ttl 'song_chords_*.ttl'
-
-graph="http://ns.inria.fr/wasabi/graph/metadata"
-./virtuoso-import.sh \
-    --cleargraph \
-    --graph $graph \
-    --path $CURRENT_DIR/../rdf_dataset_description \
-    '*.ttl'

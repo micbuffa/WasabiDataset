@@ -7,14 +7,16 @@
 @prefix dce:    <http://purl.org/dc/elements/1.1/>.
 @prefix dct:    <http://purl.org/dc/terms/>.
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
 @prefix prov:   <http://www.w3.org/ns/prov#>.
 @prefix schema: <http://schema.org/>.
+@prefix sd:   	<http://www.w3.org/ns/sparql-service-description#>
 @prefix void:   <http://rdfs.org/ns/void#>.
 
 @prefix ws:     <http://ns.inria.fr/wasabi/> .
 
 ws:wasabi-1-0
-    a               dcat:Dataset, schema:Dataset;
+    a               dcat:Dataset, void:Dataset, schema:Dataset;
     dct:title       "The WASABI RDF Knowledge Graph";
     schema:name     "The WASABI RDF Knowledge Graph";
     dct:description "The WASABI Dataset is a large corpus of songs enriched with metadata extracted from music databases on the Web, and resulting from the processing of song lyrics and from audio analysis. This dataset is the RDF representation of the original WASABI dataset.";
@@ -27,22 +29,43 @@ ws:wasabi-1-0
     dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     
-    dct:creator     "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    dct:creator     <https://team.inria.fr/wimmics/>, "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
     
-    schema:author    "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    schema:author    <https://team.inria.fr/wimmics/>, "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
     
-    dce:publisher    <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
-    schema:publisher <http://univ-cotedazur.fr>, <https://www.inria.fr>, <https://www.cnrs.fr>;
+    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
+    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
     schema:subjectOf ws:fell2019love;
 
     a prov:Entity;
     prov:wasGeneratedBy     ws:RdfGeneration;
     prov:wasGeneratedAtTime "2020-12-09"^^xsd:date;
+    
+    a                   void:Dataset;
+    void:uriSpace       "http://ns.inria.fr/wasabi/";
+    void:triples        "55542555"^^xsd:integer;
+    void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
+    void:dataDump       <https://doi.org/10.5281/zenodo.4312641>;
+    
+    void:vocabulary
+        bibo:, dcat:, dce:, dct:, foaf:, frbr:, prov:, schema:, void:,
+        <http://www.wikidata.org/entity/>,
+        <http://purl.org/ontology/mo/>,
+        <http://dbpedia.org/ontology/>,
+        <http://purl.org/ontology/af/>,
+        <http://purl.org/ontology/chord/>;
     .
+    
 
-<http://univ-cotedazur.fr>  a foaf:Organization; foaf:name "University Côte d'Azur".
-<https://www.inria.fr>      a foaf:Organization; foaf:name "Inria".
-<https://www.cnrs.fr>       a foaf:Organization; foaf:name "CNRS".
+<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
+    foaf:homepage <http://univ-cotedazur.fr>.
+<https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
+    foaf:homepage <https://www.inria.fr>.
+<https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
+    foaf:homepage <https://www.cnrs.fr>.
+<https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
+
+
 <https://orcid.org/0000-0001-9064-0463> a foaf:Person; foaf:name "Franck MICHEL".
 <https://orcid.org/0000-0003-0543-1232> a foaf:Person; foaf:name "Fabien Gandon".
 <https://orcid.org/0000-0003-1007-0101> a foaf:Person; foaf:name "Alain GIBOIN".
@@ -50,6 +73,27 @@ ws:wasabi-1-0
 <https://orcid.org/0000-0002-0756-6934> a foaf:Person; foaf:name "Marco WINCKLER".
 <https://orcid.org/0000-0001-5959-5561> a foaf:Person; foaf:name "Catherine FARON".
 
+
+# --- SPARQL Service Description and DCAT DataService
+ws:sparql-service
+    a                    sd:Service, dcat:DataService;
+    sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
+    sd:endpoint          <http://wasabi.inria.fr/sparql>;
+    dcat:endpointURL     <http://wasabi.inria.fr/sparql>;
+    rdfs:label           "SPARQL endpoint serving the WASABI RDF Knowledge Graph";
+    dcat:servesDataset   ws:wasabi-1-0;
+    sd:availableGraphs [
+        a                sd:GraphCollection;
+        sd:namedGraph 
+            <http://ns.inria.fr/wasabi/ontology/>,
+            <http://ns.inria.fr/wasabi/graph/metadata>,
+            <http://ns.inria.fr/wasabi/graph/artists>,
+            <http://ns.inria.fr/wasabi/graph/albums>,
+            <http://ns.inria.fr/wasabi/graph/songs>
+    ].
+
+
+# --- Provenance information
 
 ws:RdfGeneration
     a               prov:Activity;
