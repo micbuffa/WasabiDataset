@@ -28,6 +28,7 @@ ws:wasabi-1-0
     
     dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
+    dcat:keyword    "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     
     dct:creator     <https://team.inria.fr/wimmics/>, "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
     
@@ -58,7 +59,7 @@ ws:wasabi-1-0
     
 
 <https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
-    foaf:homepage <http://univ-cotedazur.fr>.
+    foaf:homepage <https://univ-cotedazur.fr>.
 <https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
     foaf:homepage <https://www.inria.fr>.
 <https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
