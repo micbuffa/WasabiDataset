@@ -59,6 +59,9 @@ If you use our resource, please cite the following article:
 # WASABI RDF Knowledge Graph
 
 The WASABI RDF Knowledge Graph provides an RDF representation of songs, artists and albums, together with the information automatically extracted from lyrics and audio content.
+The dataset and ontology have the same root namespace: `http://ns.inria.fr/wasabi/`. All URIs are dereferenceable.
+
+The dataset itslef is identified by URI [`http://ns.inria.fr/wasabi/wasabi-1-0`](http://ns.inria.fr/wasabi/wasabi-1-0). It comes with DCAT, VOID and SPARQL-SD descriptions.
 
 It leverages the [WASABI ontology](ontology) that reuses classes and properties from other vocabularies. Not all the terms needed to describe resources were imported in the ontology. As a result, the resource descriptions use terms from multiple vocabularies whose namespaces and prefixes are given below.
 
