@@ -22,6 +22,8 @@ help()
 
 # Default path is current directory
 path=`pwd`
+unset cleargraph
+unset graph
 
 while [  "$1" == "-h" -o   "$1" == "--help" -o  "$1" == "--graph" -o  "$1" == "--path" -o  "$1" == "--cleargraph" ]; do
   case "$1" in
