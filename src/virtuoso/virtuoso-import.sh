@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# This script requires alias isql_dba like this:
-#   alias isql_dba='$VIRTUOSO/bin/isql -H localhost -U dba -P ...
-
 help()
 {
   echo

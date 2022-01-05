@@ -1,0 +1,63 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#>.
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix void:   <http://rdfs.org/ns/void#>.
+
+@prefix ws:     <http://ns.inria.fr/wasabi/> .
+
+ws:wasabi-2-0
+    a                   void:Dataset;
+    void:uriSpace       "http://ns.inria.fr/wasabi/";
+    void:triples        "55542555"^^xsd:integer;
+    void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
+    void:dataDump       <https://doi.org/10.5281/zenodo.5603369>;
+    
+    void:vocabulary     <http://www.w3.org/ns/dcat#>;
+    void:vocabulary     <http://purl.org/dc/terms/>;
+    void:vocabulary     <http://xmlns.com/foaf/0.1/>;
+    void:vocabulary     <http://purl.org/vocab/frbr/core#>;
+    void:vocabulary     <http://www.w3.org/ns/prov#>;
+    void:vocabulary     <http://schema.org/>;
+    void:vocabulary     <http://rdfs.org/ns/void#>;
+    void:vocabulary     <http://www.wikidata.org/entity/>;
+    void:vocabulary     <http://purl.org/ontology/mo/>;
+    void:vocabulary     <http://dbpedia.org/ontology/>;
+    void:vocabulary     <http://purl.org/ontology/af/>;
+    void:vocabulary     <http://purl.org/ontology/chord/>;
+    .
+
+# --- Linksets
+
+ws:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+ws:wasabi2wikidata
+   a void:Linkset;
+   void:linkPredicate owl:sameAs, dbo:genre;
+   void:subjectsTarget ws:wasabi-2-0;
+   void:objectsTarget ws:Wikidata;
+   void:triples "34449"^^xsd:integer;
+   .
+
+ws:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+ws:wasabi2dbpedia
+   a void:Linkset;
+   void:linkPredicate owl:sameAs;
+   void:subjectsTarget ws:wasabi-2-0;
+   void:objectsTarget ws:DBpedia;
+   void:triples "222329"^^xsd:integer;
+   .

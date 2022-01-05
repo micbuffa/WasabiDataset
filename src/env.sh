@@ -2,9 +2,9 @@
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-export WASABI_VERSION=1.0
-export WASABI_VERSION_DASH=1-0
-export WASABI_DATE=2020-11-27
+export WASABI_VERSION=2.0
+export WASABI_VERSION_DASH=2-0
+export WASABI_DATE=2021-11-16
 
 # MongoDB database
 export DB=wasabi
