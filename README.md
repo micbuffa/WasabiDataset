@@ -6,7 +6,7 @@ The WASABI Song Corpus is a large corpus of songs enriched with metadata extract
 
 More specifically, given that lyrics encode an important part of the semantics of a song, we focus here on the description of the methods we proposed to extract relevant information from the lyrics, such as their **structure segmentation**, their **topics**, the **explicitness** of the lyrics content, the **salient passages** of a song and the **emotions** conveyed. 
 
-The corpus contains 1.73M songs with lyrics (1.41M unique lyrics)  annotated at different levels with the output of the above mentioned methods. Such corpus labels and the provided methods can be exploited by music search engines and music professionals (e.g. journalists, radio presenters) to better handle large collections of lyrics, allowing an intelligent browsing, categorization and segmentation recommendation of songs.
+The corpus contains 1.73M songs with lyrics (1.41M unique lyrics) annotated at different levels with the output of the above mentioned methods. Such corpus labels and the provided methods can be exploited by music search engines and music professionals (e.g. journalists, radio presenters) to better handle large collections of lyrics, allowing an intelligent browsing, categorization and segmentation recommendation of songs.
 
 
 ## Interactive explorer
@@ -139,10 +139,10 @@ The following **named graphs** can be queried from our SPARQL endpoint:
 | Named graph    | Description |
 | -------------  | ---- |
 | http://ns.inria.fr/wasabi/ontology/ | WASABI ontology | 
-| http://ns.inria.fr/wasabi/graph/metadata | dataset description + definition of a few properties | 
+| http://ns.inria.fr/wasabi/graph/metadata | dataset description (DCAT, VOID, SPARQL SD) | 
 | http://ns.inria.fr/wasabi/graph/artists | artists metadata (name, genre, record label, web pages etc.) | 
 | http://ns.inria.fr/wasabi/graph/albums | albums metadata (title, publication date, length etc.) | 
-| http://ns.inria.fr/wasabi/graph/songs | songs metadata (title, album, artist, publication date, chords etc.) |
+| http://ns.inria.fr/wasabi/graph/songs | songs metadata (title, album, publication date, etc.), chords, topics, tags, emotions |
 
 
 # License

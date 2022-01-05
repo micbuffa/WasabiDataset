@@ -36,4 +36,7 @@ graph="http://ns.inria.fr/wasabi/graph/songs"
     --cleargraph \
     --graph $graph \
     --path $DATASET_DIR \
-    'song_nochords.ttl.*' song_artist_id.ttl 'song_chords_*.ttl'
+    'song_nochords.ttl.*' song_artist_id.ttl \
+    'song_chords_*.ttl' \
+    'song_topics_*.ttl' \
+    song_emotion_nlp.ttl song_emotion_tags.ttl song_social_tags.ttl
