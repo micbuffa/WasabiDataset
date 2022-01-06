@@ -22,14 +22,15 @@ ws:wasabi-2-0
     dct:licence     <https://creativecommons.org/licenses/by-nc/4.0/>;
     schema:licence  <https://creativecommons.org/licenses/by-nc/4.0/>;
     owl:versionInfo "2.0";
-    dct:issued      "2021-11-16""^^xsd:date; schema:datePublished "2021-11-16""^^xsd:date;
+    dct:issued      "2021-11-16"^^xsd:date;
+    schema:datePublished "2021-11-16"^^xsd:date;
     
     dct:subject     "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     schema:keywords "music", "song", "metadata", "lyrics", "audio analysis", "chord";
     
-    dct:creator     "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    dct:creator     "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", <https://orcid.org/0000-0002-7989-5518>, <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
     
-    schema:author    "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", "Maroua Tikat", <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
+    schema:author    "Michel Buffa", "Elena Cabrio", "Michael Fell", <https://orcid.org/0000-0003-0543-1232>, <https://orcid.org/0000-0003-1007-0101>, <https://orcid.org/0000-0001-8158-5562>, "Fabrice Jauvat", "Elmahdi Korfed", <https://orcid.org/0000-0001-9064-0463>, "Johan Pauwels", "Guillaume Pellerin", <https://orcid.org/0000-0002-7989-5518>, <https://orcid.org/0000-0002-0756-6934>, <https://team.inria.fr/wimmics/>;
     
     dce:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
     schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
@@ -48,6 +49,7 @@ ws:wasabi-2-0
     foaf:homepage <https://www.cnrs.fr>.
 <https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
 
+<https://orcid.org/0000-0002-7989-5518> a foaf:Person; foaf:name "Maroua Tikat".
 <https://orcid.org/0000-0001-9064-0463> a foaf:Person; foaf:name "Franck MICHEL".
 <https://orcid.org/0000-0003-0543-1232> a foaf:Person; foaf:name "Fabien Gandon".
 <https://orcid.org/0000-0003-1007-0101> a foaf:Person; foaf:name "Alain GIBOIN".
@@ -92,3 +94,54 @@ ws:fell2019love
     dct:bibliographicCitation "Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon. Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations. arXiv:1912.02477";
     dce:creator     "Michael Fell", "Elena Cabrio", "Elmahdi Korfed", "Michel Buffa", "Fabien Gandon";
     schema:author   "Michael Fell", "Elena Cabrio", "Elmahdi Korfed", "Michel Buffa", "Fabien Gandon".
+
+# VOID description
+
+ws:wasabi-2-0
+    a                   void:Dataset;
+    void:uriSpace       "http://ns.inria.fr/wasabi/";
+    void:triples        "55542555"^^xsd:integer;
+    void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
+    void:dataDump       <https://doi.org/10.5281/zenodo.5603369>;
+    
+    void:vocabulary     <http://www.w3.org/ns/dcat#>;
+    void:vocabulary     <http://purl.org/dc/terms/>;
+    void:vocabulary     <http://xmlns.com/foaf/0.1/>;
+    void:vocabulary     <http://purl.org/vocab/frbr/core#>;
+    void:vocabulary     <http://www.w3.org/ns/prov#>;
+    void:vocabulary     <http://schema.org/>;
+    void:vocabulary     <http://rdfs.org/ns/void#>;
+    void:vocabulary     <http://www.wikidata.org/entity/>;
+    void:vocabulary     <http://purl.org/ontology/mo/>;
+    void:vocabulary     <http://dbpedia.org/ontology/>;
+    void:vocabulary     <http://purl.org/ontology/af/>;
+    void:vocabulary     <http://purl.org/ontology/chord/>;
+    .
+
+# --- Linksets
+
+ws:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+ws:wasabi2wikidata
+   a void:Linkset;
+   void:linkPredicate owl:sameAs, dbo:genre;
+   void:subjectsTarget ws:wasabi-2-0;
+   void:objectsTarget ws:Wikidata;
+   void:triples "34449"^^xsd:integer;
+   .
+
+ws:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+ws:wasabi2dbpedia
+   a void:Linkset;
+   void:linkPredicate owl:sameAs;
+   void:subjectsTarget ws:wasabi-2-0;
+   void:objectsTarget ws:DBpedia;
+   void:triples "222329"^^xsd:integer;
+   .

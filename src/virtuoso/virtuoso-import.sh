@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
 help()
 {
@@ -6,7 +8,7 @@ help()
   echo "$0 imports a set of RDF files (Turtle or NTriples) as a named graph into Virtuoso."
   echo
   echo "Usage:"
-  echo "$0 --graph <graph URI> [--cleargraph] [--path <full path of data files>] file1 file2 ... fileN"
+  echo "$0 --graph <graph URI> [--cleargraph] [--path <path of data files>] file1 file2 ... fileN"
   echo "$0 [-h|--help]"
   echo
   echo "The path of files to import defaults to the current directory if not provided."
@@ -22,7 +24,7 @@ path=`pwd`
 unset cleargraph
 unset graph
 
-while [  "$1" == "-h" -o   "$1" == "--help" -o  "$1" == "--graph" -o  "$1" == "--path" -o  "$1" == "--cleargraph" ]; do
+while [ "$1" == "-h" -o "$1" == "--help" -o  "$1" == "--graph" -o  "$1" == "--path" -o  "$1" == "--cleargraph" ]; do
   case "$1" in
     --graph ) graph=$2; shift;;
     --path ) path=$2; shift;;

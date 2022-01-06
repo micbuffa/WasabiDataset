@@ -40,6 +40,10 @@ wsb:
   dcterms:licence <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
 .
 
+<https://orcid.org/0000-0002-7989-5518> 
+    a foaf:Person; 
+    foaf:name "Maroua Tikat";
+    schema:name "Maroua Tikat".
 <https://orcid.org/0000-0003-1900-0871>
     a foaf:Person;
     foaf:name  "Michel BUFFA";

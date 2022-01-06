@@ -8,9 +8,6 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-XR2RML=.
-JAR=$XR2RML/morph-xr2rml-dist-1.3.2-20211126.142114-3-jar-with-dependencies.jar
-
 help()
 {
   exe=$(basename $0)
@@ -19,6 +16,10 @@ help()
   echo "   $exe  album  mapping_album.ttl  album.ttl"
   exit 1
 }
+
+XR2RML=$(pwd)
+JAR=$XR2RML/morph-xr2rml-dist-1.3.2-20211126.142114-3-jar-with-dependencies.jar
+
 
 # --- Read input arguments
 collection=$1
@@ -32,7 +33,7 @@ if [[ -z "$output" ]] ; then help; fi
 
 
 # --- Init log file
-mkdir $XR2RML/logs &> /dev/null
+mkdir -p $XR2RML/logs &> /dev/null
 log=$XR2RML/logs/run_xr2rml_${collection}.log
 echo -n "" > $log
 

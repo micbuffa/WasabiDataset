@@ -38,7 +38,7 @@ This [Jupyter Notebook](Showcase.ipynb) shows how to use the different resources
 
 Initially, the songs lyrics were retrieved from the LyricsWikia service that helped bootstrap the WASABI project. However, we cannot redistribute the lyrics since these are copyrighted material.
 
-As of today (2020), LyricsWikia is no longer availabile. Some NLP researchers managed to use our ML models on full lyrics that they obtained from other sources, in particular the commercial MusixMatch service (that provides large parts of the lyrics for free) or other online web site from where they could scrap the lyrics.
+As of 2020, LyricsWikia is no longer availabile. Some NLP researchers managed to use our ML models on full lyrics that they obtained from other sources, in particular the commercial MusixMatch service (that provides large parts of the lyrics for free) or other online web site from where they could scrap the lyrics.
 
 We have plans to complete the dataset in the next three years (starting 2021), and we have already written scripts that use MusixMatch to perform lyrics analysis on the upcoming new content.
 
@@ -61,7 +61,7 @@ If you use our resource, please cite the following article:
 The WASABI RDF Knowledge Graph provides an RDF representation of songs, artists and albums, together with the information automatically extracted from lyrics and audio content.
 The dataset and ontology have the same root namespace: `http://ns.inria.fr/wasabi/`. All URIs are dereferenceable.
 
-The dataset itslef is identified by URI [`http://ns.inria.fr/wasabi/wasabi-1-0`](http://ns.inria.fr/wasabi/wasabi-1-0). It comes with DCAT, VOID and SPARQL-SD descriptions.
+The dataset itslef is identified by URI [`http://ns.inria.fr/wasabi/wasabi-2-0`](http://ns.inria.fr/wasabi/wasabi-2-0). It comes with DCAT, VOID and SPARQL-SD descriptions.
 
 It leverages the [WASABI ontology](ontology) that reuses classes and properties from other vocabularies. Not all the terms needed to describe resources were imported in the ontology. As a result, the resource descriptions use terms from multiple vocabularies whose namespaces and prefixes are given below.
 
@@ -122,12 +122,12 @@ Album URIs are formatted as `http://ns.inria.fr/wasabi/album/album_id` where alb
 Each album is linked to its artist as follows:
 - `mo:performer <http://ns.inria.fr/wasabi/artist/artist_id>`
 
-The ontology folder provides an [example of the RDF Turtle representation of alnum "HIStory" by Mickael Jackson](ontology/example_album.ttl).
+The ontology folder provides an [example of the RDF Turtle representation of albnum "HIStory" by Mickael Jackson](ontology/example_album.ttl).
 
 
 ## Downloading and SPARQL Querying
 
-The dataset is downloadable as an RDF dump (in Turtle syntax) from Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4312641.svg)](https://doi.org/10.5281/zenodo.4312641)
+The dataset is downloadable, as an RDF dump (in Turtle syntax) and JSON dump, from Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5603369.svg)](https://doi.org/10.5281/zenodo.5603369)
 
 It can also be queried through our Virtuoso OS SPARQL endpoint http://wasabi.inria.fr/sparql.
 
@@ -141,8 +141,9 @@ The following **named graphs** can be queried from our SPARQL endpoint:
 | http://ns.inria.fr/wasabi/ontology/ | WASABI ontology | 
 | http://ns.inria.fr/wasabi/graph/metadata | dataset description (DCAT, VOID, SPARQL SD) | 
 | http://ns.inria.fr/wasabi/graph/artists | artists metadata (name, genre, record label, web pages etc.) | 
-| http://ns.inria.fr/wasabi/graph/albums | albums metadata (title, publication date, length etc.) | 
-| http://ns.inria.fr/wasabi/graph/songs | songs metadata (title, album, publication date, etc.), chords, topics, tags, emotions |
+| http://ns.inria.fr/wasabi/graph/albums | albums metadata (title, publication date, length etc.) |
+| http://ns.inria.fr/wasabi/graph/songs | songs metadata (title, album, publication date, etc.), chords |
+| http://ns.inria.fr/wasabi/graph/songs-extd | songs extended information: topics, emotion tags, social tags, emotion valence and arrousal |
 
 
 # License
