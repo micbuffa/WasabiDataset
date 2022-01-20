@@ -1,0 +1,593 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<#song>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.song_nlp.find({})""";
+    ];
+    rr:subjectMap [ 
+    	rr:template "http://ns.inria.fr/wasabi/song/{$._id}";
+		rr:class wsb:Song;
+    ];
+  	
+  	# Id Song
+    rr:predicateObjectMap [
+    	rr:predicate mo:uuid ;
+    	rr:objectMap [ 
+            xrr:reference "$._id"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Abstract
+    rr:predicateObjectMap [
+        rr:predicate dcterms:abstract;
+        rr:objectMap [ 
+            xrr:reference "$.abstract"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Summary
+    rr:predicateObjectMap [
+        rr:predicate wsb:song_summary;
+        rr:objectMap [ 
+            xrr:reference "$.summary"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Subject
+    rr:predicateObjectMap [
+        rr:predicate dcterms:subject;
+        rr:objectMap [ 
+            xrr:reference "$.subject.*"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Notes
+    rr:predicateObjectMap [
+        rr:predicate wsb:song_notes;
+        rr:objectMap [ 
+            xrr:reference "$.notes"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Award
+    rr:predicateObjectMap [
+        rr:predicate schema:award;
+        rr:objectMap [ 
+            xrr:reference "$.award.*";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Record label
+    rr:predicateObjectMap [
+        rr:predicate wsb:record_label;
+        rr:objectMap [ 
+            xrr:reference "$.recordLabel.*"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Producer
+    rr:predicateObjectMap [
+        rr:predicate mo:producer;
+        rr:objectMap [ 
+            xrr:reference "$.producer.*"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Rank
+    rr:predicateObjectMap [
+        rr:predicate wsb:rank;
+        rr:objectMap [ 
+            xrr:reference "$.rank";
+            rr:termType rr:Literal;
+            rr:datatype xsd:integer;
+        ];
+        
+    ];
+
+    # Explicit Content Lyrics
+    #rr:predicateObjectMap [
+        #rr:predicate wsb:explicit_lyrics_count;
+        #rr:objectMap [ 
+            #xrr:reference "$.explicit_content_lyrics";
+            #rr:datatype xsd:integer;
+        #];
+    #];
+
+    # Id Album
+    rr:predicateObjectMap [
+        rr:predicate schema:album;
+        rr:objectMap [
+            rr:template "http://ns.inria.fr/wasabi/album/{$.id_album.$oid}"; 
+        ];    
+    ];
+
+    # Id Song Deezer
+    rr:predicateObjectMap [
+        rr:predicate wsb:deezer_song_id;
+        rr:objectMap [ 
+            xrr:reference "$.id_song_deezer"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Id Song lastFm
+    rr:predicateObjectMap [
+        rr:predicate wsb:lastFm_song_id;
+        rr:objectMap [ 
+            xrr:reference "$.lastfm_id"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Id Artist Deezer
+    rr:predicateObjectMap [
+        rr:predicate wsb:deezer_artist_id;
+        rr:objectMap [ 
+            xrr:reference "$.id_artist_deezer"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Id Song MusicBrainz
+    rr:predicateObjectMap [
+        rr:predicate mo:musicbrainz_guid;
+        rr:objectMap [ 
+            xrr:reference "$.id_song_musicbrainz"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Id Song TimeSide
+    rr:predicateObjectMap [
+        rr:predicate wsb:song_timeSide_uuid;
+        rr:objectMap [ 
+            xrr:reference "$.id_uuid"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Title
+    rr:predicateObjectMap [
+        rr:predicate dcterms:title;
+        rr:objectMap [ 
+            xrr:reference "$.title"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # ISRC
+    rr:predicateObjectMap [
+        rr:predicate mo:isrc;
+        rr:objectMap [ 
+            xrr:reference "$.isrc"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # BPM
+    rr:predicateObjectMap [
+        rr:predicate mo:bpm;
+        rr:objectMap [ 
+            xrr:reference "$.bpm"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:float;
+        ];
+    ];
+
+    # Gain
+    rr:predicateObjectMap [
+        rr:predicate wsb:gain;
+        rr:objectMap [ 
+            xrr:reference "$.gain"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:float;
+        ];
+    ];
+
+    # Preview
+    #rr:predicateObjectMap [
+    #    rr:predicate mo:preview;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.preview"; 
+    #        rr:termType rr:IRI;
+    #    ];
+    #];
+
+    # Title Accent Fold
+    rr:predicateObjectMap [
+        rr:predicate wsb:title_without_accent;
+        rr:objectMap [ 
+            xrr:reference "$.title_accent_fold"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Disambiguation
+    rr:predicateObjectMap [
+        rr:predicate schema:disambiguatingDescription;
+        rr:objectMap [ 
+            xrr:reference "$.disambiguation"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Language
+    rr:predicateObjectMap [
+        rr:predicate dcterms:language;
+        rr:objectMap [ 
+            xrr:reference "$.language"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Language detected
+    rr:predicateObjectMap [
+        rr:predicate wsb:language_detected;
+        rr:objectMap [ 
+            xrr:reference "$.language_detect"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Begin
+    rr:predicateObjectMap [
+        rr:predicate schema:startTime;
+        rr:objectMap [ 
+            xrr:reference "$.begin"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # End
+    rr:predicateObjectMap [
+        rr:predicate schema:endTime;
+        rr:objectMap [ 
+            xrr:reference "$.end"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Song Length
+    rr:predicateObjectMap [
+        rr:predicate mo:duration;
+        rr:objectMap [
+            rr:template "{$.length}000";
+            rr:termType rr:Literal;
+            rr:datatype xsd:float;
+        ];
+    ];
+
+    # Boolean explicit lyrics
+    rr:predicateObjectMap [
+        rr:predicate wsb:has_explicit_lyrics;
+        rr:objectMap [ 
+            xrr:reference "$.explicitLyrics";
+            rr:datatype xsd:boolean;
+        ];
+    ];
+
+    # Boolean emotion tags
+    rr:predicateObjectMap [
+        rr:predicate wsb:has_emotion_tags;
+        rr:objectMap [ 
+            xrr:reference "$.has_emotion_tags";
+            rr:datatype xsd:boolean;
+        ];
+    ];
+
+    # Boolean social tags
+    rr:predicateObjectMap [
+        rr:predicate wsb:has_social_tags;
+        rr:objectMap [ 
+            xrr:reference "$.has_social_tags";
+            rr:datatype xsd:boolean;
+        ];
+    ];
+
+    # URL de la chanson
+    rr:predicateObjectMap [
+        rr:predicate mo:homepage;
+        rr:objectMap [ 
+            xrr:reference "$.urlSong"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Position de la chanson
+    rr:predicateObjectMap [
+        rr:predicate mo:track_number;
+        rr:objectMap [ 
+            xrr:reference "$.position"; 
+            rr:datatype xsd:nonNegativeInteger;
+        ];
+    ];
+
+    # Lyrics de la chanson
+    #rr:predicateObjectMap [
+    #    rr:predicate wsb:lyrics;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.lyrics"; 
+    #        rr:termType rr:Literal;
+    #        rr:datatype xsd:string;
+    #    ];
+    #];
+
+    # URL Allmusic
+    rr:predicateObjectMap [
+        rr:predicate wsb:allMusic_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlAllmusic"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL MusicBrainz
+    rr:predicateObjectMap [
+        rr:predicate mo:musicbrainz;
+        rr:objectMap [ 
+            xrr:reference "$.urlMusicBrainz"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL Deezer
+    rr:predicateObjectMap [
+        rr:predicate wsb:deezer_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlDeezer"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Date de publication de la chanson
+    rr:predicateObjectMap [
+        rr:predicate schema:datePublished;
+        rr:objectMap [ 
+            xrr:reference "$.publicationDate"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:date;
+        ];
+    ];
+
+    # Song's release date
+    rr:predicateObjectMap [
+        rr:predicate schema:releaseDate;
+        rr:objectMap [ 
+            xrr:reference "$.releaseDate.*"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:date;
+        ];
+    ];
+
+    # URL Pandora
+    rr:predicateObjectMap [
+        rr:predicate wsb:pandora_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlPandora"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL Spotify
+    rr:predicateObjectMap [
+        rr:predicate wsb:spotify_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlSpotify"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL ITunes
+    rr:predicateObjectMap [
+        rr:predicate wsb:iTunes_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlITunes"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL YouTube
+    rr:predicateObjectMap [
+        rr:predicate wsb:youTube_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlYouTube"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL Amazon
+    rr:predicateObjectMap [
+        rr:predicate wsb:amazon_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlAmazon"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL HypeMachine
+    rr:predicateObjectMap [
+        rr:predicate wsb:hypeMachine_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlHypeMachine"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL GoEar
+    rr:predicateObjectMap [
+        rr:predicate wsb:goEar_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlGoEar"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # URL LastFm
+    rr:predicateObjectMap [
+        rr:predicate wsb:lastFm_page;
+        rr:objectMap [ 
+            xrr:reference "$.urlLastFm"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Multitrack file
+    rr:predicateObjectMap [
+        rr:predicate wsb:multitrack_file;
+        rr:objectMap [ 
+            xrr:reference "$.multitrack_file"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+    # Multitrack path
+    rr:predicateObjectMap [
+        rr:predicate wsb:multitrack_path;
+        rr:objectMap [ 
+            xrr:reference "$.multitrack_path"; 
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+
+
+    # Animux content
+    #rr:predicateObjectMap [
+    #    rr:predicate wsb:animux_content;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.animux_content"; 
+    #        rr:termType rr:Literal;
+    #        rr:datatype xsd:string;
+    #    ];
+    #];
+
+    # Array available countries
+    #rr:predicateObjectMap [
+    #    rr:predicate schema:location;
+    #    rr:objectMap [ 
+    #        xrr:reference "$.availableCountries.*";
+    #    ]
+    #];
+
+    # Array format
+    rr:predicateObjectMap [
+        rr:predicate dcterms:format;
+        rr:objectMap [ 
+            xrr:reference "$.format.*";
+        ]
+    ];
+
+    # Recordind description
+    rr:predicateObjectMap [
+        rr:predicate wsb:recording_description;
+        rr:objectMap [ 
+            xrr:reference "$.recorded.*";
+        ]
+    ];
+
+    # Writer
+    rr:predicateObjectMap [
+        rr:predicate schema:author;
+        rr:objectMap [ 
+            xrr:reference "$.writer.*";
+        ]
+    ];
+
+    # URL Wikipedia
+    rr:predicateObjectMap [
+        rr:predicate mo:wikipedia;
+        rr:objectMap [ 
+            xrr:reference "$.urlWikipedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # DBpedia equivalent resource
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            xrr:reference "$.uriDBpedia"; 
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Predicted arousal
+    rr:predicateObjectMap [
+        rr:predicate wsb:arousal;
+        rr:objectMap [ 
+            xrr:reference "$.arousal_predicted";
+            rr:datatype xsd:float;
+        ];
+    ];
+
+    # Predicted valence
+    rr:predicateObjectMap [
+        rr:predicate wsb:valence;
+        rr:objectMap [ 
+            xrr:reference "$.valence_predicted";
+            rr:datatype xsd:float;
+        ];
+    ];
+    .
+
+
+<Classic_Song>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+    	# Jongo needs strings in singles quotes (difference with MongoDB shell)
+        xrr:query """db.song_nochords.find( {'isClassic' : true} )""";
+    ];
+    rr:subjectMap [ 
+    	rr:template "http://ns.inria.fr/wasabi/song/{$._id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:constant wsb:Classic_Song;
+            rr:termType rr:IRI;
+        ];
+    ].

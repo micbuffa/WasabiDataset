@@ -1,0 +1,69 @@
+@prefix af:      <http://purl.org/ontology/af/> .
+@prefix chord:   <http://purl.org/ontology/chord/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+
+<#Song_Social_Tag>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+        xrr:query """db.socialtags.find()""";
+        rml:iterator "$.socials.*";
+        xrr:pushDown [ xrr:reference "$.song_id"; xrr:as "song_id" ];
+    ];
+    rr:subjectMap [ 
+    	rr:template "http://ns.inria.fr/wasabi/song/{$.song_id}";
+		rr:class wsb:Song;
+    ];
+
+    # Object: socials
+    rr:predicateObjectMap [
+        rr:predicate wsb:social_tags;
+        rr:objectMap [
+            rr:template "{$.song_id} {$.social_tag} {$.nbr_tags}";
+            rr:termType rr:BlankNode;
+        ];
+    ]
+    .
+
+    <Socials>
+    a rr:TriplesMap;
+    xrr:logicalSource [
+        xrr:query """db.socialtags.find()""";
+        rml:iterator "$.socials.*";
+        xrr:pushDown [ xrr:reference "$.song_id"; xrr:as "song_id" ];
+    ];
+    rr:subjectMap [ 
+    	rr:template "{$.song_id} {$.social_tag} {$.nbr_tags}";
+        rr:termType rr:BlankNode;
+    ];
+
+    # Social tag
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ 
+            xrr:reference "$.social_tag";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];  
+    ];
+
+    # Number of times the social tag has been mentioned on the song's lastFm page
+    rr:predicateObjectMap [
+        rr:predicate wsb:tag_count;
+        rr:objectMap [ 
+            xrr:reference "$.nbr_tags";
+            rr:datatype xsd:integer;
+        ];
+    ].
