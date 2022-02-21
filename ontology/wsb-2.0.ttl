@@ -32,7 +32,7 @@ wsb:
   dcterms:created "2021-11-16"^^xsd:date;
   dcterms:issued "2021-11-16"^^xsd:date;
   
-  dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
+  dcterms:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
   schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>;
 
   dcterms:type <http://purl.org/adms/assettype/Ontology>;
