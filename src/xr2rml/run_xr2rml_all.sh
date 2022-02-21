@@ -23,7 +23,22 @@ collection=artist_members
 collection=song_artist_id
 ./run_xr2rml.sh         $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl
 
+collection=emotion_tags
+./run_xr2rml.sh         $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
+collection=social_tags
+./run_xr2rml.sh         $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
+collection=topic_models
+./run_xr2rml.sh         $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
+collection=topics
+./run_xr2rml.sh         $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl
+
 collection=song_nochords
+./run_xr2rml_split.sh   $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl  10000000
+
+collection=song
 ./run_xr2rml_split.sh   $collection  mapping_${collection}.ttl  $ODIR/${collection}.ttl  10000000
 
 
