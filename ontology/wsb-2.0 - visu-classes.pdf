@@ -1,0 +1,76 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix emoca:   <http://ns.inria.fr/emoca#>.
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdt:     <http://www.wikidata.org/prop/direct/> .
+ 
+# Classes
+
+wsb:Album
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Album"@en ;
+  rdfs:comment "A phonographic production containing a collection of songs by one or more composers."@en ;
+  owl:equivalentClass [
+    a owl:Restriction;
+    owl:onProperty mo:release_type;
+    owl:hasValue mo:album;
+  ];
+.
+wsb:Choir
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Choir"@en ;
+  rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+.
+wsb:Orchestra
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Orchestra"@en ;
+  rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+.
+wsb:Artist_Group
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Artist group"@en ;
+  rdfs:comment "Group of musicians."@en ;
+  owl:equivalentClass mo:MusicGroup ;
+.
+wsb:Artist_Person
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Artist person"@en ;
+  rdfs:comment "Single person crearting music work (musician)."@en ;
+  owl:equivalentClass mo:SoloMusicArtist ;
+.
+wsb:Lyrics
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Lyrics"@en ;
+  rdfs:comment "Lyrics of a song."@en ;
+  rdfs:subClassOf mo:Lyrics ;
+.
+wsb:Song
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Song"@en ;
+  rdfs:comment "A musical piece or track on a particular album."@en ;
+  owl:equivalentClass mo:Track ;
+.
+wsb:Classic_Song
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Song that is a classic of pop/rock music"@en ;
+.
+wsb:Topic
+  a owl:Class ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:label "Topic of a song represented as a bag of words"@en ;
+.
