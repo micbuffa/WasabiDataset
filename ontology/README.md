@@ -12,7 +12,7 @@ This current version of the ontology includes 8 classes and 50 properties.
 ### Namespace
 [`http://ns.inria.fr/wasabi/ontology/`](http://ns.inria.fr/wasabi/ontology/)
 ### Current Version
-v1
+v2
 ### Publisher
 Inria
 ### Imported ontologies
@@ -44,7 +44,7 @@ The dataset also includes several calculated features. Here are a few examples:
 To describe songs:
 - **performer** (`mo:performer`) : from the Music Ontology [`http://purl.org/ontology/mo/`](http://purl.org/ontology/mo/)
 - **author** (`schema:author`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
-- **publication date** (`schema:datePublished`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
+- **publication date** (`schema:Published`) : from Schema.org Vocabulary [`http://schema.org/`](http://schema.org/)
 
 To describe artists:
 - **homepage** (`mo:homepage`) : from the Music Ontology [`http://purl.org/ontology/mo/`](http://purl.org/ontology/mo/)
