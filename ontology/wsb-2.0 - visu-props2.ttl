@@ -1,0 +1,288 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix emoca:   <http://ns.inria.fr/emoca#>.
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix wsb:     <http://ns.inria.fr/wasabi/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdt:     <http://www.wikidata.org/prop/direct/> .
+
+# Properties
+
+wsb:tag_count
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "tag count"@en ;
+  rdfs:comment "Number of times a tag has been mentioned."@en ;
+  rdfs:range xsd:integer ;
+.
+wsb:song_notes
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  owl:equivalentProperty dbo:notes ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song notes"@en ;
+  rdfs:comment "Additional notes on a song."@en ;
+.
+wsb:song_summary
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:subPropertyOf dcterms:abstract ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song summary"@en ;
+  rdfs:comment "Summary of song's lyrics."@en ;
+  rdfs:range xsd:string ;
+.
+wsb:song_timeSide_uuid
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song timeSide uuid"@en ;
+  rdfs:comment "UUID of a song generate by TimeSide API."@en ;
+  rdfs:range xsd:string ;
+.
+wsb:title_without_accent
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:subPropertyOf dcterms:title ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "title accent fold"@en ;
+  rdfs:comment "song title without accent."@en ;
+  rdfs:range xsd:string ;
+.
+wsb:topic_probability
+  a owl:ObjectProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "topics"@en ;
+  rdfs:comment "List of song's topics and their probability."@en ;
+  rdfs:range rdf:List ;
+.
+wsb:topic
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:subPropertyOf dcterms:abstract ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "topic"@en ;
+  rdfs:comment "Topic of a song."@en ;
+  rdfs:range xsd:string ;
+.
+wsb:probability
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "topic probability"@en ;
+  rdfs:comment "Probability that a topic describes a song."@en ;
+  rdfs:range xsd:float ;
+.
+wsb:topic_terms
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:subPropertyOf dcterms:abstract ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "topic terms"@en ;
+  rdfs:comment "Top words describing a song."@en ;
+  rdfs:range xsd:string ;
+.
+wsb:arousal
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song emotion arousal"@en ;
+  rdfs:comment "Intensity of the emotion in a song."@en ;
+  rdfs:range xsd:float ;
+.
+wsb:valence
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "song emotion valence"@en ;
+  rdfs:comment "Quality of the emotion in a song."@en ;
+  rdfs:range xsd:float ;
+.
+
+
+# Properties linking to web pages
+
+wsb:BBC_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "BBC page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding BBC page. Ex value : http://www.bbc.co.uk/music/artists/d4f7b6a1-9331-4ea9-b064-46366f88adb7"@en ;
+.
+wsb:allMusic_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "allMusic page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding AllMusic page. Ex value : http://www.allmusic.com/album/mw0000056882"@en ;
+.
+wsb:amazon_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "amazon page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding Amazon page."@en ;
+.
+wsb:deezer_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "deezer page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding Deezer page."@en ;
+.
+wsb:equipBoard_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "equipBoard page"@en ;
+  rdfs:comment "Links an artist or an instrument to its corresponding EquipBoard page."@en ;
+.
+wsb:facebook_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "facebook page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding Facebook page."@en ;
+.
+wsb:goEar_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "goEar page"@en ;
+  rdfs:comment "Links a song to its corresponding GoEar page."@en ;
+.
+wsb:googlePlus_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "googlePlus page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding GooglePlus page."@en ;
+.
+wsb:hypeMachine_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "hypeMachine page"@en ;
+  rdfs:comment "Links a song to its corresponding HypeMachine page."@en ;
+.
+wsb:iTunes_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "iTunes page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding ITunes page."@en ;
+.
+wsb:instagram_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "instagram page"@en ;
+  rdfs:comment "Links an artist to its corresponding Instagram page."@en ;
+.
+wsb:lastFm_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "lastFm page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding LastFm page."@en ;
+.
+wsb:pandora_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain wsb:Song ;
+  rdfs:label "pandora page"@en ;
+  rdfs:comment "Links a song to its corresponding Pandora page."@en ;
+.
+wsb:pureVolume_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "pureVolume page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding PureVolume page."@en ;
+.
+wsb:rateYourMusic_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "rateYourMusic page"@en ;
+  rdfs:comment "Links an artist to its corresponding RateYourMusic page."@en ;
+.
+wsb:secondHandSongs_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:subPropertyOf foaf:homepage ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "secondHandSongs page"@en ;
+  rdfs:comment "Links an artist to its corresponding SecondHandSongs page."@en ;
+.
+wsb:soundCloud_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "soundCloud page"@en ;
+  rdfs:comment "Links an artist to its corresponding SoundCloud page."@en ;
+.
+wsb:spotify_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "spotify page"@en ;
+  rdfs:comment "Links an artist, a song, etc. to its corresponding Spotify page."@en ;
+.
+wsb:twitter_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "twitter page"@en ;
+  rdfs:comment "Links an artist to its corresponding Twitter page."@en ;
+.
+wsb:wikia_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "wikia page"@en ;
+  rdfs:comment "Links an artist to its corresponding Wikia page."@en ;
+.
+wsb:wikidata_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain foaf:Agent ;
+  rdfs:label "wikidata page"@en ;
+  rdfs:comment "Links an artist to its corresponding Wikidata page."@en ;
+.
+wsb:youTube_page
+  a owl:ObjectProperty ;
+  rdfs:subClassOf foaf:page ;
+  rdfs:isDefinedby wsb: ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "youTube page"@en ;
+  rdfs:comment "Links an artist to its corresponding Youtube page."@en ;
+.
