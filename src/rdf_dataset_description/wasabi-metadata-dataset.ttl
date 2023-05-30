@@ -38,7 +38,7 @@ ws:wasabi-2-0
 
     a prov:Entity;
     prov:wasGeneratedBy     ws:RdfGeneration;
-    prov:wasGeneratedAtTime "2021-11-16"^^xsd:date;
+    prov:generatedAtTime "2021-11-16"^^xsd:date;
     .
 
 <https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
@@ -100,7 +100,7 @@ ws:fell2019love
 ws:wasabi-2-0
     a                   void:Dataset;
     void:uriSpace       "http://ns.inria.fr/wasabi/";
-    void:triples        "55542555"^^xsd:integer;
+    void:triples        "183494891"^^xsd:integer;
     void:sparqlEndpoint <http://wasabi.inria.fr/sparql>;
     void:dataDump       <https://doi.org/10.5281/zenodo.5603369>;
     
