@@ -44,8 +44,23 @@ We have plans to complete the dataset in the next three years (starting 2021), a
 
 
 ### Citation
-If you use our resource, please cite the following article:
+If you use our resource, please cite the following articles:
 ```
+incollection{buffa:hal-03282619,
+  TITLE = {{The WASABI Dataset: Cultural, Lyrics and Audio Analysis Metadata About 2 Million Popular Commercially Released Songs}},
+  AUTHOR = {Buffa, Michel and Cabrio, Elena and Fell, Michael and Gandon, Fabien and Giboin, Alain and Hennequin, Romain and Michel, Franck and Pauwels, Johan and Pellerin, Guillaume and Tikat, Maroua and Winckler, Marco},
+  URL = {https://hal.science/hal-03282619},
+  BOOKTITLE = {{The Semantic Web. ESWC 2021. Lecture Notes in Computer Science, vol 12731.}},
+  PAGES = {515-531},
+  YEAR = {2021},
+  MONTH = May,
+  DOI = {10.1007/978-3-030-77385-4\_31},
+  KEYWORDS = {Music metadata ; Lyrics analysis ; Named entites ; Linked data},
+  PDF = {https://hal.science/hal-03282619/file/camera_ready.pdf},
+  HAL_ID = {hal-03282619},
+  HAL_VERSION = {v1},
+}
+
 @article{fell2019love,
   title={Love Me, Love Me, Say (and Write!) that You Love Me: Enriching the WASABI Song Corpus with Lyrics Annotations},
   author={Michael Fell and Elena Cabrio and Elmahdi Korfed and Michel Buffa and Fabien Gandon},
