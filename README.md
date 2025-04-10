@@ -19,14 +19,14 @@ The dataset can be explored using the [WASABI Interactive Navigator](https://was
   - [208k albums](https://mega.nz/file/mgZTjZiK#f8_CzSSC3j8nt75hZ8WqNMFSB_i8AvuB_olZ8hisl1E)
 - Natural Language Processing Annotations
   - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](https://mega.nz/file/n4YhFAhA#zy86GkDKPHVuNP6gw_r6owqR4ULj_dOcG_0lBAOFJoc)
-  - [50k lyrics summaries](https://mega.nz/#!SdpxTS4I!SdbzMWvZO9fKkIF1OkHZ5lPH6v5w0HvK-GeztBV1T-g)
-  - [Topic predictions for 1.73M lyrics (inludes topic model)](https://mega.nz/#!CUpl0KKJ!tLlL1eMKjX94ZJvpaO7w7HFtozpKDlyruVwRt2z-9G4)
+  - [50k lyrics summaries](https://mega.nz/file/6xBSALZT#N8Bedy3OrB_e9RD23R8E5_9I4ZheTqNqPQIVYpw2Vbw)
+  - [Topic predictions for 1.73M lyrics (inludes topic model)](https://mega.nz/file/L44Xga5Z#z9t3pZZcwjz0iKvwy5j_Fm5ce-ufydqlTPp5e-II44g)
 - Additional annotations provided
-  - [LastFM social tags](https://mega.nz/#!WQx1ka7K!9PfU3K7q6JkqkfMdrirS5IRsMbEJVV1FWBEmoUGK5ME)
-  - [LastFM emotion tags](https://mega.nz/#!KN5jwYpZ!GFEc04t87ylJYILQQzjMaeZNg0_DoBnYeo0dvxLoLg4)
+  - [LastFM social tags](https://mega.nz/file/ntYkkaxC#lrNZH7JFM5twfuasr-qhs64e1_OSifBeSfIC8Pwr3Bk)
+  - [LastFM emotion tags](https://mega.nz/file/T8BSCSiC#fH3jw5jon3bvtVKkyT7gGG8y-Y770NzVLSwMta-vpoY)
 - NLP Models
-  - [Explicit lyrics classifier trained on 438k lyrics](https://mega.nz/#!ndx3zQ4I!K6Qq6Bvf9NXWHejPvMyxwTUJGn-U8K6auuN0gCktcmU)
-  - [LDA topic model trained on 1.05M lyrics](https://mega.nz/#!KFhh2AyC!-OaAifvACt3CAo-Pl-D14LIOb6Gx4ReJzjmqY7StwCY)
+  - [Explicit lyrics classifier trained on 438k lyrics](https://mega.nz/file/H85lkDCb#D2G4A9I18y_U4c8TodhMKKfMxlGYE2beETSwTtMLkAQ)
+  - [LDA topic model trained on 1.05M lyrics](https://mega.nz/file/Ol5BSJIJ#DXb0kNMcplQPuodlBQ1bB6Wo0QM2LnyrqrraEOBR9FU)
 
 ## Dependencies
 The packages present when successfully running the code are listed in the file [pip list --local](doc/pip%20list%20--local).
@@ -76,7 +76,7 @@ incollection{buffa:hal-03282619,
 The WASABI RDF Knowledge Graph provides an RDF representation of songs, artists and albums, together with the information automatically extracted from lyrics and audio content.
 The dataset and ontology have the same root namespace: `http://ns.inria.fr/wasabi/`. All URIs are dereferenceable.
 
-The dataset itslef is identified by URI [`http://ns.inria.fr/wasabi/wasabi-2-0`](http://ns.inria.fr/wasabi/wasabi-2-0). It comes with DCAT, VOID and SPARQL-SD descriptions.
+The dataset itself is identified by URI [`http://ns.inria.fr/wasabi/wasabi-2-0`](http://ns.inria.fr/wasabi/wasabi-2-0). It comes with DCAT, VOID and SPARQL-SD descriptions.
 
 It leverages the [WASABI ontology](ontology) that reuses classes and properties from other vocabularies. Not all the terms needed to describe resources were imported in the ontology. As a result, the resource descriptions use terms from multiple vocabularies whose namespaces and prefixes are given below.
 
