@@ -14,11 +14,11 @@ The dataset can be explored using the [WASABI Interactive Navigator](https://was
 
 ## Overview
 - The WASABI Song Corpus consists of CSV files containing the songs, the artists and the albums.
-  - [2.1M songs](https://mega.nz/#!GUhzBagS!dkWiRhRKCzTpbWtWcUvoD3Rrhleq50krvvg6n0SaI-w)
+  - [2.1M songs](https://mega.nz/file/ilwk1IDR#x0EqlS3larxBlOpYaq1Gb81ZCAkxuMPAI3dwQxjAgGo)
   - [77k artists](https://mega.nz/file/qwAm2KjR#BRQCyVCQq1eObGXHV5DTqHY_NlYmhdVBcd939aixrTo)
   - [208k albums](https://mega.nz/file/mgZTjZiK#f8_CzSSC3j8nt75hZ8WqNMFSB_i8AvuB_olZ8hisl1E)
 - Natural Language Processing Annotations
-  - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](https://mega.nz/#!HR5R3ACA!wV9zqtQSxziZCdXwu3gApnrTIPyH2hMAgGUYJEqmlmk)
+  - [Self-similarity matrices (line- and segment level) for 1.73M lyrics](https://mega.nz/file/n4YhFAhA#zy86GkDKPHVuNP6gw_r6owqR4ULj_dOcG_0lBAOFJoc)
   - [50k lyrics summaries](https://mega.nz/#!SdpxTS4I!SdbzMWvZO9fKkIF1OkHZ5lPH6v5w0HvK-GeztBV1T-g)
   - [Topic predictions for 1.73M lyrics (inludes topic model)](https://mega.nz/#!CUpl0KKJ!tLlL1eMKjX94ZJvpaO7w7HFtozpKDlyruVwRt2z-9G4)
 - Additional annotations provided
